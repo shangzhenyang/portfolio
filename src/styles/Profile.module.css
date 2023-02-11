@@ -1,12 +1,8 @@
 .avatar {
-	background-color: rgba(255, 255, 255, .1);
-	background-image: url(https://assets.retiehe.com/ysz/avatar-transparent.png);
-	background-size: cover;
 	border: 1px solid rgba(255, 255, 255, .2);
 	border-radius: 50%;
-	height: 150px;
+	display: block;
 	margin: 0 auto;
-	width: 150px;
 }
 
 .btn {

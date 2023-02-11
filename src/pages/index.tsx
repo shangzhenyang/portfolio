@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import ReactGA from "react-ga4";
 
 import styles from "@/styles/Home.module.css";
 
-import MyWorks from "@/components/MyWorks";
 import Profile from "@/components/Profile";
+import Works from "@/components/Works";
 
 export default function Home() {
 	const FAVICON = "https://assets.retiehe.com/ysz/avatar.png";
@@ -23,7 +24,7 @@ export default function Home() {
 				<title>Shangzhen Yang</title>
 				<meta
 					name="description"
-					content="This is Shangzhen Yang' s portfolio website."
+					content="This is Shangzhen Yang's portfolio website."
 				/>
 				<meta
 					name="viewport"
@@ -32,11 +33,18 @@ export default function Home() {
 				<link rel="icon" href={FAVICON} />
 				<link rel="apple-touch-icon" href={FAVICON} />
 			</Head>
-			<div className={[styles["bg"], styles["bg-img"]].join(" ")}></div>
+			<Image
+				className={[styles["bg"], styles["bg-img"]].join(" ")}
+				src="https://assets.retiehe.com/blur/reichenbach-falls.jpg"
+				alt=""
+				height={1080}
+				width={1920}
+				priority={true}
+			/>
 			<div className={[styles["bg"], styles["bg-cover"]].join(" ")}></div>
 			<div className={styles["root"]}>
 				<Profile />
-				<MyWorks />
+				<Works />
 			</div>
 		</>
 	);

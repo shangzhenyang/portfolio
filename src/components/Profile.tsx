@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
@@ -7,7 +8,14 @@ function Profile() {
 	return (
 		<main className={styles["profile"]}>
 			<div>
-				<div className={styles["avatar"]}></div>
+				<Image
+					className={styles["avatar"]}
+					src="https://assets.retiehe.com/ysz/avatar-transparent.png"
+					alt=""
+					height={150}
+					width={150}
+					priority={true}
+				/>
 				<h1 className={styles["title"]}>Shangzhen Yang</h1>
 				<div className={styles["description"]}>
 					<div>CS Student at University of Washington</div>

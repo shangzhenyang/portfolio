@@ -12,10 +12,8 @@
 }
 
 .bg-img {
-	background-attachment: fixed;
-	background-image: url(https://assets.retiehe.com/blur/reichenbach-falls.jpg);
-	background-position: center;
-	background-size: cover;
+	display: block;
+	object-fit: cover;
 }
 
 .root {

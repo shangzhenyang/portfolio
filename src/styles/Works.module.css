@@ -2,14 +2,6 @@
 	margin-bottom: 20px;
 }
 
-.my-works {
-	display: flex;
-	flex: 0 0 400px;
-	flex-direction: column;
-	height: 100vh;
-	overflow: auto;
-}
-
 .title {
 	background-color: rgba(0, 0, 0, .2);
 	border: 1px dotted transparent;
@@ -24,8 +16,16 @@
 	border-color: rgba(255, 255, 255, .2);
 }
 
+.works {
+	display: flex;
+	flex: 0 0 400px;
+	flex-direction: column;
+	height: 100vh;
+	overflow: auto;
+}
+
 @media (max-width: 800px) {
-	.my-works {
+	.works {
 		overflow: unset;
 	}
 }

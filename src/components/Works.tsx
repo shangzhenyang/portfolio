@@ -1,4 +1,4 @@
-import styles from "@/styles/MyWorks.module.css";
+import styles from "@/styles/Works.module.css";
 
 import DownloadBar from "@/components/DownloadBar";
 import Footer from "@/components/Footer";
@@ -10,7 +10,7 @@ interface Group {
 	items: ListItem[];
 }
 
-function MyWorks() {
+function Works() {
 	const groups: Group[] = [{
 		title: "Main Projects",
 		items: [{
@@ -107,7 +107,7 @@ function MyWorks() {
 	});
 
 	return (
-		<div className={styles["my-works"]}>
+		<div className={styles["works"]}>
 			<a
 				id="works"
 				className={styles["title"]}
@@ -120,4 +120,4 @@ function MyWorks() {
 	);
 }
 
-export default MyWorks;
+export default Works;

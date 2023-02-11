@@ -1,5 +1,13 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "assets.retiehe.com"
+			}
+		]
+	},
 	reactStrictMode: true,
 	async headers() {
 		if (process.env.NODE_ENV === "development") {
@@ -18,7 +26,7 @@ const nextConfig = {
 					"key": "Strict-Transport-Security",
 					"value": "max-age=31536000"
 				}]
-			},
+			}
 		];
 	},
 	async redirects() {
