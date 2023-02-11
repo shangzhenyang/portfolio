@@ -4,14 +4,15 @@
 	padding: 0 20px;
 }
 
-.download-bar img {
+.download-bar a {
 	transition: opacity .25s;
 }
 
-.download-bar img:hover {
+.download-bar a:focus,
+.download-bar a:hover {
 	opacity: .8;
 }
 
-.download-bar img:active {
+.download-bar a:active {
 	opacity: .6;
 }
