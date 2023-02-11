@@ -30,6 +30,11 @@ export default function Home() {
 					name="viewport"
 					content="width=device-width, initial-scale=1, viewport-fit=cover"
 				/>
+				<link
+					rel="alternate"
+					hrefLang="zh-CN"
+					href="https://www.yangshangzhen.com/"
+				/>
 				<link rel="icon" href={FAVICON} />
 				<link rel="apple-touch-icon" href={FAVICON} />
 			</Head>
