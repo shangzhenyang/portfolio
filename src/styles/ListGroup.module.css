@@ -1,0 +1,45 @@
+.description {
+	color: rgba(255, 255, 255, .5);
+	font-size: 14px;
+}
+
+.group {
+	border-bottom: 1px solid rgba(255, 255, 255, .1);
+	border-left: none;
+	border-right: none;
+	border-top: 1px solid rgba(255, 255, 255, .1);
+	margin: 20px 0;
+	padding: 10px;
+}
+
+.group:last-of-type {
+	margin-bottom: 0;
+}
+
+.list-item {
+	background-color: transparent;
+	border-radius: 5px;
+	cursor: default;
+	display: block;
+	line-height: 22px;
+	padding: 10px 20px;
+	transition: background-color .25s;
+}
+
+.list-item:focus,
+.list-item:hover {
+	background-color: rgba(255, 255, 255, .1);
+}
+
+.list-item:active {
+	background-color: rgba(255, 255, 255, .05);
+}
+
+.title {
+	border: 1px solid rgba(255, 255, 255, .1);
+	border-radius: 10px;
+	color: white;
+	line-height: 1.25;
+	margin: 0 auto;
+	padding: 5px 15px;
+}

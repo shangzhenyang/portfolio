@@ -1,3 +1,48 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": "next/core-web-vitals",
+	"rules": {
+		"arrow-body-style": [
+			"error",
+			"always"
+		],
+		"arrow-parens": [
+			"error",
+			"always"
+		],
+		"curly": [
+			"error",
+			"all"
+		],
+		"default-case": "error",
+		"default-case-last": "error",
+		"eol-last": [
+			"error",
+			"always"
+		],
+		"eqeqeq": [
+			"error",
+			"always"
+		],
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		"no-mixed-operators": "error",
+		"prefer-const": "error",
+		"quotes": [
+			"error",
+			"double"
+		],
+		"semi": [
+			"error",
+			"always"
+		]
+	}
 }

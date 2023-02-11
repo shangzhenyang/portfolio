@@ -1,0 +1,17 @@
+.download-bar {
+	align-items: center;
+	display: flex;
+	padding: 0 20px;
+}
+
+.download-bar img {
+	transition: opacity .25s;
+}
+
+.download-bar img:hover {
+	opacity: .8;
+}
+
+.download-bar img:active {
+	opacity: .6;
+}
