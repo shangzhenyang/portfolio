@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 import styles from "@/styles/ListGroup.module.css";
 
-import ListItem from "@/types/ListItem";
+import type ListItem from "@/types/ListItem";
 
 interface Props {
 	items: ListItem[];

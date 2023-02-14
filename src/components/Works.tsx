@@ -3,7 +3,8 @@ import styles from "@/styles/Works.module.css";
 import DownloadBar from "@/components/DownloadBar";
 import Footer from "@/components/Footer";
 import ListGroup from "@/components/ListGroup";
-import ListItem from "@/types/ListItem";
+
+import type ListItem from "@/types/ListItem";
 
 interface Group {
 	title: string;
@@ -52,10 +53,6 @@ function Works() {
 			title: "Bing Wallpaper API",
 			link: "https://github.com/shangzhenyang/bing-wallpaper",
 			description: "Implemented using Cloudflare Pages Functions."
-		}, {
-			title: "Electron Hot Updater",
-			link: "https://github.com/shangzhenyang/electron-hot-updater",
-			description: "Update electron app without downloading installer."
 		}, {
 			title: "Periodic Table",
 			link: "https://github.com/shangzhenyang/periodic-table",
