@@ -5,6 +5,7 @@
 }
 
 .download-bar a {
+	outline: none;
 	transition: opacity .25s;
 }
 
