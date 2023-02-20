@@ -50,6 +50,10 @@ function Works() {
 			link: "https://encoder.shangzhenyang.com/",
 			description: "Easily encode text into various formats."
 		}, {
+			title: "Random Number",
+			link: "https://random.shangzhenyang.com/",
+			description: "A customizable random number generator."
+		}, {
 			title: "Bing Wallpaper API",
 			link: "https://github.com/shangzhenyang/bing-wallpaper",
 			description: "Implemented using Cloudflare Pages Functions."
