@@ -77,9 +77,6 @@ function Works() {
 			title: "Marquee",
 			link: "https://tool.retiehe.com/marquee"
 		}, {
-			title: "Random Number",
-			link: "https://tool.retiehe.com/randomnumber"
-		}, {
 			title: "Text Editor",
 			link: "https://tool.retiehe.com/texteditor"
 		}]
