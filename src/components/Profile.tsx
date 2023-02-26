@@ -1,10 +1,23 @@
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+	faBilibili,
+	faGithub,
+	faLinkedin
+} from "@fortawesome/free-brands-svg-icons";
 
 import styles from "@/styles/Profile.module.css";
 
 function Profile() {
+	const [isChina, setIsChina] = useState(false);
+
+	const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
+
+	useEffect(() => {
+		setIsChina(timeZone === "Asia/Shanghai");
+	}, [timeZone]);
+
 	return (
 		<main className={styles["profile"]}>
 			<div>
@@ -27,12 +40,18 @@ function Profile() {
 					<FontAwesomeIcon icon={faGithub} />
 					GitHub
 				</a>
-				<a
+				{!isChina && <a
 					className={styles["btn"]}
 					href="https://www.linkedin.com/in/shangzhenyang/">
 					<FontAwesomeIcon icon={faLinkedin} />
 					LinkedIn
-				</a>
+				</a>}
+				{isChina && <a
+					className={styles["btn"]}
+					href="https://space.bilibili.com/5931839">
+					<FontAwesomeIcon icon={faBilibili} />
+					Bilibili
+				</a>}
 			</div>
 		</main>
 	);
