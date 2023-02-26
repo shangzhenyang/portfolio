@@ -6,14 +6,14 @@
 
 .download-bar a {
 	outline: none;
-	transition: opacity .25s;
+	transition: filter .25s;
 }
 
 .download-bar a:focus,
 .download-bar a:hover {
-	opacity: .8;
+	filter: brightness(1.2);
 }
 
 .download-bar a:active {
-	opacity: .6;
+	filter: brightness(.8);
 }

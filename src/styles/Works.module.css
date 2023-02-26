@@ -8,6 +8,7 @@
 	cursor: default;
 	display: block;
 	line-height: 24px;
+	outline: none;
 	padding: 10px 25px;
 	transition: background-color .25s;
 }
