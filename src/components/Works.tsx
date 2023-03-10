@@ -81,8 +81,11 @@ function Works() {
 			link: "https://tool.retiehe.com/texteditor"
 		}]
 	}, {
-		title: "Casual Games",
+		title: "Other Projects",
 		items: [{
+			title: "Unofficial ChatGPT Client",
+			link: "https://chatgpt.shangzhenyang.com/",
+		}, {
 			title: "Math Quiz",
 			link: "https://www.yangshangzhen.com/math",
 		}, {
