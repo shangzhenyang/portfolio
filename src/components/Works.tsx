@@ -86,6 +86,9 @@ function Works() {
 			title: "Unofficial ChatGPT Client",
 			link: "https://chatgpt.shangzhenyang.com/",
 		}, {
+			title: "UW Campus Paths",
+			link: "https://paths.shangzhenyang.com/",
+		}, {
 			title: "Math Quiz",
 			link: "https://www.yangshangzhen.com/math",
 		}, {
