@@ -59,7 +59,7 @@ function Works() {
 			description: "Implemented using Cloudflare Pages Functions."
 		}, {
 			title: "Periodic Table",
-			link: "https://github.com/shangzhenyang/periodic-table",
+			link: "https://www.npmjs.com/package/@shangzhen/periodic-table",
 			description: "Get information of elements and compounds."
 		}]
 	}, {
