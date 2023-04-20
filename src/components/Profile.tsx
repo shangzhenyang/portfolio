@@ -7,6 +7,7 @@ import {
 	faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 
+import avatar from "@/images/avatar-transparent.png";
 import styles from "@/styles/Profile.module.css";
 
 function Profile() {
@@ -23,7 +24,7 @@ function Profile() {
 			<div>
 				<Image
 					className={styles["avatar"]}
-					src="https://assets.retiehe.com/ysz/avatar-transparent.png"
+					src={avatar}
 					alt=""
 					height={150}
 					width={150}
