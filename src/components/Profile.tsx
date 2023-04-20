@@ -28,6 +28,7 @@ function Profile() {
 					alt="Avatar"
 					height={150}
 					width={150}
+					placeholder="empty"
 					priority={true}
 				/>
 				<h1 className={styles["title"]}>Shangzhen Yang</h1>

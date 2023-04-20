@@ -19,6 +19,7 @@ function DownloadBar({ appName, appStoreLink, googlePlayLink }: Props) {
 					height={41}
 					width={123}
 					unoptimized={true}
+					placeholder="empty"
 				/>
 			</a>
 			<a href={googlePlayLink}>
@@ -27,6 +28,7 @@ function DownloadBar({ appName, appStoreLink, googlePlayLink }: Props) {
 					alt={"Get " + appName + " on Google Play"}
 					height={60}
 					width={155}
+					placeholder="empty"
 				/>
 			</a>
 		</div>

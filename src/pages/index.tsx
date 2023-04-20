@@ -44,6 +44,7 @@ export default function Home() {
 				alt=""
 				height={1080}
 				width={1920}
+				placeholder="empty"
 				priority={true}
 			/>
 			<div className={[styles["bg"], styles["bg-cover"]].join(" ")}></div>
