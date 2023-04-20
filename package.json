@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build": "next build && next-image-export-optimizer",
 		"start": "next start",
 		"lint": "next lint"
 	},
@@ -15,8 +15,7 @@
 		"next": "^13.3.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-ga4": "^2.0.0",
-		"sharp": "^0.32.0"
+		"react-ga4": "^2.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "^18.15.12",
@@ -24,6 +23,8 @@
 		"@types/react-dom": "^18.0.11",
 		"eslint": "^8.38.0",
 		"eslint-config-next": "^13.3.0",
+		"next-image-export-optimizer": "^1.5.1",
+		"sharp": "^0.32.0",
 		"typescript": "^5.0.4"
 	}
 }

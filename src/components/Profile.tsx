@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faBilibili,
@@ -22,10 +22,10 @@ function Profile() {
 	return (
 		<main className={styles["profile"]}>
 			<div>
-				<Image
+				<ExportedImage
 					className={styles["avatar"]}
 					src={avatar}
-					alt=""
+					alt="Avatar"
 					height={150}
 					width={150}
 					priority={true}

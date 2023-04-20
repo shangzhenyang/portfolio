@@ -1,10 +1,11 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
 	images: {
-		unoptimized: true
+		loader: "custom"
 	},
 	output: "export",
-	reactStrictMode: true
+	reactStrictMode: true,
+	transpilePackages: ["next-image-export-optimizer"]
 };
 
 module.exports = nextConfig;

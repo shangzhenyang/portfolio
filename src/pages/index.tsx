@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import ReactGA from "react-ga4";
 
 import bgImg from "@/images/reichenbach-falls.jpg";
@@ -38,7 +38,7 @@ export default function Home() {
 				<link rel="icon" href={favicon.src} />
 				<link rel="apple-touch-icon" href={favicon.src} />
 			</Head>
-			<Image
+			<ExportedImage
 				className={[styles["bg"], styles["bg-img"]].join(" ")}
 				src={bgImg}
 				alt=""

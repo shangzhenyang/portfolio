@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 
 import googlePlayBadge from "@/images/google-play.png";
 import styles from "@/styles/DownloadBar.module.css";
@@ -13,15 +13,16 @@ function DownloadBar({ appName, appStoreLink, googlePlayLink }: Props) {
 	return (
 		<div className={styles["download-bar"]}>
 			<a href={appStoreLink}>
-				<Image
+				<ExportedImage
 					src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
 					alt={"Download " + appName + " on the App Store"}
 					height={41}
 					width={123}
+					unoptimized={true}
 				/>
 			</a>
 			<a href={googlePlayLink}>
-				<Image
+				<ExportedImage
 					src={googlePlayBadge.src}
 					alt={"Get " + appName + " on Google Play"}
 					height={60}
