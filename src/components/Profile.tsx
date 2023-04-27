@@ -13,7 +13,7 @@ import avatar from "@/images/avatar-transparent.png";
 import styles from "@/styles/Profile.module.css";
 
 function Profile() {
-	const [isChinaUser, setIsChinaUser] = useState(isChinaSite);
+	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinaSite);
 
 	const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
 
