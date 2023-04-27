@@ -1,27 +1,77 @@
 import { useEffect } from "react";
 import Head from "next/head";
+import classnames from "classnames";
 import ExportedImage from "next-image-export-optimizer";
 import ReactGA from "react-ga4";
+
+import { isChinaSite, t } from "@/i18n";
+import LinkList from "@/components/LinkList";
+import Profile from "@/components/Profile";
 
 import bgImg from "@/images/reichenbach-falls.jpg";
 import favicon from "@/images/avatar.png";
 import styles from "@/styles/Home.module.css";
 
-import Profile from "@/components/Profile";
-import Works from "@/components/Works";
-
 export default function Home() {
+	const csp = {
+		"default-src": [
+			"'none'"
+		],
+		"base-uri": [
+			"'none'"
+		],
+		"connect-src": [
+			"'self'",
+			"https://*.google-analytics.com",
+			"https://*.analytics.google.com",
+			"https://*.googletagmanager.com"
+		],
+		"form-action": [
+			"'none'"
+		],
+		"img-src": [
+			"'self'",
+			"https://developer.apple.com",
+			"https://*.google-analytics.com",
+			"https://*.googletagmanager.com",
+			"https://hm.baidu.com"
+		],
+		"script-src": [
+			"'self'",
+			"https://www.googletagmanager.com",
+			"https://hm.baidu.com"
+		],
+		"style-src": [
+			"'self'",
+			"'unsafe-inline'"
+		]
+	};
+	if (process.env.NODE_ENV === "development") {
+		csp["script-src"].push("'unsafe-eval'");
+	}
+	const cspStr = Object.entries(csp).map(([key, value]) => {
+		return key + " " + value.join(" ");
+	}).join("; ");
+
 	useEffect(() => {
 		setTimeout(() => {
-			ReactGA.initialize("G-DKZ5ZLG4FT");
-			ReactGA.send("pageview");
+			if (isChinaSite) {
+				const hm = document.createElement("script");
+				hm.async = true;
+				hm.src = "https://hm.baidu.com/hm.js?d80574fac90c818f3df7d0b7d1d75419";
+				document.body.appendChild(hm);
+			} else {
+				ReactGA.initialize("G-DKZ5ZLG4FT");
+				ReactGA.send("pageview");
+			}
 		}, 1000);
 	}, []);
 
 	return (
 		<>
 			<Head>
-				<title>Shangzhen Yang</title>
+				<title>{t("shangzhenYang")}</title>
+				<meta name="author" content={t("shangzhenYang")} />
 				<meta
 					name="description"
 					content="This is Shangzhen Yang's portfolio website."
@@ -29,6 +79,16 @@ export default function Home() {
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1, viewport-fit=cover"
+				/>
+				<meta
+					httpEquiv="Content-Security-Policy"
+					content={cspStr}
+				/>
+				{isChinaSite && <base target="_blank" />}
+				<link
+					rel="alternate"
+					hrefLang="en-US"
+					href="https://www.shangzhenyang.com/"
 				/>
 				<link
 					rel="alternate"
@@ -39,7 +99,7 @@ export default function Home() {
 				<link rel="apple-touch-icon" href={favicon.src} />
 			</Head>
 			<ExportedImage
-				className={[styles["bg"], styles["bg-img"]].join(" ")}
+				className={classnames(styles["bg"], styles["bg-img"])}
 				src={bgImg}
 				alt=""
 				height={1080}
@@ -47,10 +107,10 @@ export default function Home() {
 				placeholder="empty"
 				priority={true}
 			/>
-			<div className={[styles["bg"], styles["bg-cover"]].join(" ")}></div>
+			<div className={classnames(styles["bg"], styles["bg-cover"])}></div>
 			<div className={styles["root"]}>
 				<Profile />
-				<Works />
+				<LinkList />
 			</div>
 		</>
 	);

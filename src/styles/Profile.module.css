@@ -46,6 +46,19 @@
 	margin: 10px 15px 20px;
 }
 
+.link {
+	border-bottom: 1px solid;
+	transition: opacity .25s;
+}
+
+.link:hover {
+	opacity: .8;
+}
+
+.link:active {
+	opacity: .6;
+}
+
 .profile {
 	align-items: center;
 	box-shadow: 0 0 5px black;

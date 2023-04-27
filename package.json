@@ -4,7 +4,10 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
+		"dev:cn": "NEXT_PUBLIC_LOCALE=cn next dev",
 		"build": "next build && next-image-export-optimizer",
+		"build:cn": "NEXT_PUBLIC_LOCALE=cn npm run build",
+		"dist": "npm run build:cn",
 		"start": "next start",
 		"lint": "next lint"
 	},
@@ -12,7 +15,8 @@
 		"@fortawesome/fontawesome-svg-core": "^6.4.0",
 		"@fortawesome/free-brands-svg-icons": "^6.4.0",
 		"@fortawesome/react-fontawesome": "^0.2.0",
-		"next": "^13.3.0",
+		"classnames": "^2.3.2",
+		"next": "^13.3.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-ga4": "^2.0.0"

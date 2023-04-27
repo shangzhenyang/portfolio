@@ -7,16 +7,20 @@ import {
 	faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 
+import { isChinaSite, t } from "@/i18n";
+
 import avatar from "@/images/avatar-transparent.png";
 import styles from "@/styles/Profile.module.css";
 
 function Profile() {
-	const [isChina, setIsChina] = useState(false);
+	const [isChinaUser, setIsChinaUser] = useState(isChinaSite);
 
 	const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
 
 	useEffect(() => {
-		setIsChina(timeZone === "Asia/Shanghai");
+		if (!isChinaSite) {
+			setIsChinaUser(timeZone === "Asia/Shanghai");
+		}
 	}, [timeZone]);
 
 	return (
@@ -31,28 +35,44 @@ function Profile() {
 					placeholder="empty"
 					priority={true}
 				/>
-				<h1 className={styles["title"]}>Shangzhen Yang</h1>
+				<h1 className={styles["title"]}>{t("shangzhenYang")}</h1>
 				<div className={styles["description"]}>
-					<div>CS Student at University of Washington</div>
-					<div>Full-Stack Software Engineer</div>
+					{isChinaSite && <>
+						<div>现就读于华盛顿大学计算机系</div>
+						<div>
+							<a
+								className={styles["link"]}
+								href="https://www.retiehe.com/"
+								rel="noopener"
+							>热铁盒</a>
+							首席执行官兼软件工程师
+						</div>
+					</>}
+					{!isChinaSite && <>
+						<div>CS Student at University of Washington</div>
+						<div>Full-Stack Software Engineer</div>
+					</>}
 				</div>
 				<a
 					className={styles["btn"]}
-					href="https://github.com/shangzhenyang">
+					href="https://github.com/shangzhenyang"
+				>
 					<FontAwesomeIcon icon={faGithub} />
 					GitHub
 				</a>
-				{!isChina && <a
+				{!isChinaUser && <a
 					className={styles["btn"]}
-					href="https://www.linkedin.com/in/shangzhenyang/">
+					href="https://www.linkedin.com/in/shangzhenyang/"
+				>
 					<FontAwesomeIcon icon={faLinkedin} />
 					LinkedIn
 				</a>}
-				{isChina && <a
+				{isChinaUser && <a
 					className={styles["btn"]}
-					href="https://space.bilibili.com/5931839">
+					href="https://space.bilibili.com/5931839"
+				>
 					<FontAwesomeIcon icon={faBilibili} />
-					Bilibili
+					{t("bilibili")}
 				</a>}
 			</div>
 		</main>

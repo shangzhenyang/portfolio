@@ -1,8 +1,10 @@
 import { Main, Head, Html, NextScript, } from "next/document";
 
-export default function Document() {
+import { isChinaSite } from "@/i18n";
+
+function Document() {
 	return (
-		<Html lang="en-US">
+		<Html lang={isChinaSite ? "zh-CN" : "en-US"}>
 			<Head />
 			<body>
 				<Main />
@@ -11,3 +13,5 @@ export default function Document() {
 		</Html >
 	);
 }
+
+export default Document;

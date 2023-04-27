@@ -3,6 +3,7 @@ interface ListItem {
 	link: string;
 	description?: string;
 	extra?: JSX.Element;
+	when: boolean;
 }
 
 export default ListItem;

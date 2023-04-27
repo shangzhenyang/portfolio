@@ -5,17 +5,23 @@ import styles from "@/styles/ListGroup.module.css";
 import type ListItem from "@/types/ListItem";
 
 interface Props {
+	className: string;
 	items: ListItem[];
 	title: string;
 }
 
-function ListGroup({ items, title }: Props) {
-	const itemsElem = items.map(({ title, link, description, extra }) => {
+function ListGroup({ className, items, title }: Props) {
+	const itemElements = items.map(({ title, link, description, extra, when }) => {
+		if (!when) {
+			return null;
+		}
 		return (
 			<Fragment key={title}>
 				<a
-					className={styles["list-item"]}
-					href={link}>
+					className={className}
+					href={link}
+					rel="noopener"
+				>
 					{title}
 					{description && <div
 						className={styles["description"]}>
@@ -23,14 +29,14 @@ function ListGroup({ items, title }: Props) {
 					</div>}
 				</a>
 				{extra}
-			</Fragment>
+			</Fragment >
 		);
 	});
 
 	return (
 		<fieldset className={styles["group"]}>
 			<legend className={styles["title"]}>{title}</legend>
-			{itemsElem}
+			{itemElements}
 		</fieldset>
 	);
 }
