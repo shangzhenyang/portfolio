@@ -74,7 +74,7 @@ export default function Home() {
 				<meta name="author" content={t("shangzhenYang")} />
 				<meta
 					name="description"
-					content="This is Shangzhen Yang's portfolio website."
+					content={t("metaDescription")}
 				/>
 				<meta
 					name="viewport"

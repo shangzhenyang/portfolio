@@ -1,4 +1,4 @@
-import { Main, Head, Html, NextScript, } from "next/document";
+import { Main, Head, Html, NextScript } from "next/document";
 
 import { isChinaSite } from "@/i18n";
 
