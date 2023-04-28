@@ -32,6 +32,7 @@ function Profile() {
 					alt="Avatar"
 					height={150}
 					width={150}
+					draggable={false}
 					placeholder="empty"
 					priority={true}
 				/>

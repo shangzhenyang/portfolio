@@ -18,6 +18,7 @@ function DownloadBar({ appName, appStoreLink, googlePlayLink }: Props) {
 					alt={"Download " + appName + " on the App Store"}
 					height={41}
 					width={123}
+					draggable={false}
 					unoptimized={true}
 					placeholder="empty"
 				/>
@@ -28,6 +29,7 @@ function DownloadBar({ appName, appStoreLink, googlePlayLink }: Props) {
 					alt={"Get " + appName + " on Google Play"}
 					height={60}
 					width={155}
+					draggable={false}
 					placeholder="empty"
 				/>
 			</a>
