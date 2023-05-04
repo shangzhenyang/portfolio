@@ -9,10 +9,11 @@ import LinkList from "@/components/LinkList";
 import Profile from "@/components/Profile";
 
 import bgImg from "@/images/reichenbach-falls.jpg";
-import favicon from "@/images/avatar.png";
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
+	const FAVICON = "/images/avatar.png";
+
 	const csp = {
 		"default-src": [
 			"'none'"
@@ -95,8 +96,8 @@ export default function Home() {
 					hrefLang="zh-CN"
 					href="https://www.yangshangzhen.com/"
 				/>
-				<link rel="icon" href={favicon.src} />
-				<link rel="apple-touch-icon" href={favicon.src} />
+				<link rel="icon" href={FAVICON} />
+				<link rel="apple-touch-icon" href={FAVICON} />
 			</Head>
 			<ExportedImage
 				className={classnames(styles["bg"], styles["bg-img"])}
