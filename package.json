@@ -8,7 +8,7 @@
 		"build": "next build && next-image-export-optimizer",
 		"build:cn": "NEXT_PUBLIC_LOCALE=cn npm run build",
 		"dist": "npm run build:cn",
-		"start": "serve out",
+		"start": "npx serve out",
 		"lint": "next lint"
 	},
 	"dependencies": {
