@@ -28,7 +28,6 @@
 		"eslint": "^8.38.0",
 		"eslint-config-next": "^13.3.0",
 		"next-image-export-optimizer": "^1.5.1",
-		"serve": "^14.2.0",
 		"sharp": "^0.32.0",
 		"typescript": "^5.0.4"
 	}
