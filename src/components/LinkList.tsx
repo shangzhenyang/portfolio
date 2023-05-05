@@ -40,12 +40,6 @@ function LinkList() {
 					when: true
 				},
 				{
-					title: t("toolbox"),
-					link: "https://tool.retiehe.com/",
-					description: t("toolboxDescription"),
-					when: true
-				},
-				{
 					title: t("webHosting"),
 					link: "https://host.retiehe.com/",
 					description: t("webHostingDescription"),
@@ -53,18 +47,6 @@ function LinkList() {
 				}
 			],
 			when: true
-		},
-		{
-			title: "Collaborative Project",
-			items: [
-				{
-					title: "Hua Classmate",
-					link: "https://uwclassmate.com/",
-					description: "A course commenting website for UW students.",
-					when: true
-				}
-			],
-			when: !isChinaSite
 		},
 		{
 			title: t("openSourcedProjects"),
@@ -79,6 +61,12 @@ function LinkList() {
 					title: t("randomNumber"),
 					link: "https://random.shangzhenyang.com/",
 					description: t("randomNumberDescription"),
+					when: true
+				},
+				{
+					title: t("calculator"),
+					link: "https://calc.shangzhenyang.com/",
+					description: t("calculatorDescription"),
 					when: true
 				},
 				{
@@ -97,6 +85,18 @@ function LinkList() {
 			when: true
 		},
 		{
+			title: "Collaborative Project",
+			items: [
+				{
+					title: "Hua Classmate",
+					link: "https://uwclassmate.com/",
+					description: "A course commenting website for UW students.",
+					when: true
+				}
+			],
+			when: !isChinaSite
+		},
+		{
 			title: t("toolbox"),
 			items: [
 				{
@@ -107,11 +107,6 @@ function LinkList() {
 				{
 					title: t("timer"),
 					link: "https://tool.retiehe.com/timer",
-					when: true
-				},
-				{
-					title: t("calculator"),
-					link: "https://tool.retiehe.com/calculator",
 					when: true
 				},
 				{
