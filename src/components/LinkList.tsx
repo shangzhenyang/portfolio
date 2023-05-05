@@ -70,15 +70,15 @@ function LinkList() {
 					when: true
 				},
 				{
-					title: t("bingWallpaperApi"),
-					link: "https://github.com/shangzhenyang/bing-wallpaper",
-					description: t("bingWallpaperApiDescription"),
-					when: true
-				},
-				{
 					title: t("periodicTable"),
 					link: "https://github.com/shangzhenyang/periodic-table",
 					description: t("periodicTableDescription"),
+					when: true
+				},
+				{
+					title: t("bingWallpaperApi"),
+					link: "https://github.com/shangzhenyang/bing-wallpaper",
+					description: t("bingWallpaperApiDescription"),
 					when: true
 				}
 			],
