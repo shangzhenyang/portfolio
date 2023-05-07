@@ -33,14 +33,16 @@ function LinkList() {
 					),
 					tags: [
 						"JavaScript",
-						"Swift",
+						"Electron",
+						"Swift (iOS)",
 						"PHP",
 						"SQL",
-						"Electron",
-						"PWA",
+						"Cybersecurity",
 						"Memcached",
+						"PWA",
 						"S3",
-						"WebSocket"
+						"WebSocket",
+						"RSA Encryption"
 					],
 					when: true
 				},
@@ -52,6 +54,7 @@ function LinkList() {
 						"JavaScript",
 						"Vue",
 						"Node.js",
+						"NoSQL",
 						"PWA",
 						"Chrome Extension",
 						"Load Balancing"
@@ -68,7 +71,10 @@ function LinkList() {
 						"PHP",
 						"SQL",
 						"CDN",
+						"Cybersecurity",
 						"S3",
+						"WAF",
+						"HTML Parsing",
 						"HTTP Handling"
 					],
 					when: true
