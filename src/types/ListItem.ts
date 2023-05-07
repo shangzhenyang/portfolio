@@ -3,6 +3,7 @@ interface ListItem {
 	link: string;
 	description?: string;
 	extra?: JSX.Element;
+	tags: string[];
 	when: boolean;
 }
 

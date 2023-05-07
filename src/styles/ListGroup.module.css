@@ -11,6 +11,20 @@
 	padding: 10px;
 }
 
+.tags {
+	padding: 5px 15px 10px;
+}
+
+.tags>span {
+	background-color: rgba(24, 37, 77, .5);
+	border: 1px solid rgba(255, 255, 255, .1);
+	border-radius: 5px;
+	display: inline-block;
+	margin: 1px;
+	padding: 5px 10px;
+	white-space: nowrap;
+}
+
 .title {
 	border: 1px solid rgba(255, 255, 255, .1);
 	border-radius: 10px;

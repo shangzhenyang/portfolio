@@ -31,18 +31,46 @@ function LinkList() {
 							googlePlayLink="https://play.google.com/store/apps/details?id=cn.airportal&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
 						/>
 					),
+					tags: [
+						"JavaScript",
+						"Swift",
+						"PHP",
+						"SQL",
+						"Electron",
+						"PWA",
+						"Memcached",
+						"S3",
+						"WebSocket"
+					],
 					when: true
 				},
 				{
 					title: t("limeStartPage"),
 					link: "https://limestart.cn/intro",
 					description: t("limeStartPageDescription"),
+					tags: [
+						"JavaScript",
+						"Vue",
+						"Node.js",
+						"PWA",
+						"Chrome Extension",
+						"Load Balancing"
+					],
 					when: true
 				},
 				{
 					title: t("webHosting"),
 					link: "https://host.retiehe.com/",
 					description: t("webHostingDescription"),
+					tags: [
+						"TypeScript",
+						"Vue",
+						"PHP",
+						"SQL",
+						"CDN",
+						"S3",
+						"HTTP Handling"
+					],
 					when: true
 				}
 			],
@@ -55,30 +83,53 @@ function LinkList() {
 					title: t("encoder"),
 					link: "https://encoder.shangzhenyang.com/",
 					description: t("encoderDescription"),
+					tags: [
+						"TypeScript",
+						"React",
+						"PWA"
+					],
 					when: true
 				},
 				{
 					title: t("randomNumber"),
 					link: "https://random.shangzhenyang.com/",
 					description: t("randomNumberDescription"),
+					tags: [
+						"TypeScript",
+						"Vue",
+						"PWA"
+					],
 					when: true
 				},
 				{
 					title: t("calculator"),
 					link: "https://calc.shangzhenyang.com/",
 					description: t("calculatorDescription"),
+					tags: [
+						"TypeScript",
+						"React",
+						"PWA"
+					],
 					when: true
 				},
 				{
 					title: t("periodicTable"),
 					link: "https://github.com/shangzhenyang/periodic-table",
 					description: t("periodicTableDescription"),
+					tags: [
+						"TypeScript",
+						"npm"
+					],
 					when: true
 				},
 				{
 					title: t("bingWallpaperApi"),
 					link: "https://github.com/shangzhenyang/bing-wallpaper",
 					description: t("bingWallpaperApiDescription"),
+					tags: [
+						"TypeScript",
+						"Serverless"
+					],
 					when: true
 				}
 			],
@@ -91,6 +142,12 @@ function LinkList() {
 					title: "Hua Classmate",
 					link: "https://uwclassmate.com/",
 					description: "A course commenting website for UW students.",
+					tags: [
+						"JavaScript",
+						"React",
+						"Node.js",
+						"SQL"
+					],
 					when: true
 				}
 			],
@@ -102,21 +159,25 @@ function LinkList() {
 				{
 					title: t("wordList"),
 					link: "https://tool.retiehe.com/wordlist",
+					tags: [],
 					when: true
 				},
 				{
 					title: t("timer"),
 					link: "https://tool.retiehe.com/timer",
+					tags: [],
 					when: true
 				},
 				{
 					title: t("marquee"),
 					link: "https://tool.retiehe.com/marquee",
+					tags: [],
 					when: true
 				},
 				{
 					title: t("textEditor"),
 					link: "https://tool.retiehe.com/texteditor",
+					tags: [],
 					when: true
 				}
 			],
@@ -128,11 +189,20 @@ function LinkList() {
 				{
 					title: "Unofficial ChatGPT Client",
 					link: "https://chatgpt.shangzhenyang.com/",
+					tags: [
+						"TypeScript",
+						"React"
+					],
 					when: !isChinaSite
 				},
 				{
 					title: t("uwCampusPaths"),
 					link: "https://paths.shangzhenyang.com/",
+					tags: [
+						"TypeScript",
+						"React",
+						"Dijkstra's"
+					],
 					when: true
 				}
 			],

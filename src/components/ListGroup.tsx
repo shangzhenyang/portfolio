@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import classnames from "classnames";
 
 import styles from "@/styles/ListGroup.module.css";
 
@@ -11,12 +11,24 @@ interface Props {
 }
 
 function ListGroup({ className, items, title }: Props) {
-	const itemElements = items.map(({ title, link, description, extra, when }) => {
+	const itemElements = items.map(({
+		title,
+		link,
+		description,
+		extra,
+		tags,
+		when
+	}) => {
 		if (!when) {
 			return null;
 		}
+		const tagElements = tags.map((tag) => {
+			return (
+				<span key={tag}>{tag}</span>
+			);
+		});
 		return (
-			<Fragment key={title}>
+			<div key={title}>
 				<a
 					className={className}
 					href={link}
@@ -29,7 +41,13 @@ function ListGroup({ className, items, title }: Props) {
 					</div>}
 				</a>
 				{extra}
-			</Fragment >
+				{tags.length > 0 && <div
+					className={classnames(
+						styles["description"],
+						styles["tags"]
+					)}
+				>{tagElements}</div>}
+			</div>
 		);
 	});
 
