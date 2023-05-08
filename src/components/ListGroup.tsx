@@ -1,5 +1,7 @@
 import classnames from "classnames";
 
+import { isChinaSite } from "@/i18n";
+
 import styles from "@/styles/ListGroup.module.css";
 
 import type ListItem from "@/types/ListItem";
@@ -41,7 +43,7 @@ function ListGroup({ className, items, title }: Props) {
 					</div>}
 				</a>
 				{extra}
-				{tags.length > 0 && <div
+				{!isChinaSite && tags.length > 0 && <div
 					className={classnames(
 						styles["description"],
 						styles["tags"]
