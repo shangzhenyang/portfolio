@@ -71,9 +71,10 @@ function LinkList() {
 						"PHP",
 						"SQL",
 						"CDN",
-						"Cybersecurity",
+						"Serverless",
 						"S3",
 						"WAF",
+						"High Availability",
 						"HTML Parsing",
 						"HTTP Handling"
 					],
