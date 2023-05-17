@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import classnames from "classnames";
 
 import { isChinaSite, t } from "@/i18n";
@@ -16,9 +17,7 @@ interface Group {
 }
 
 function LinkList() {
-	const isTencent = navigator.userAgent.includes("MicroMessenger") ||
-		navigator.userAgent.includes("QQ") ||
-		navigator.userAgent.includes("SE 2.X MetaSr 1.0");
+	const [isTencent, setIsTencent] = useState<boolean>(false);
 
 	const groups: Group[] = [
 		{
@@ -260,6 +259,12 @@ function LinkList() {
 			>{title}</a>
 		);
 	});
+
+	useEffect(() => {
+		setIsTencent(navigator.userAgent.includes("MicroMessenger") ||
+			navigator.userAgent.includes("QQ") ||
+			navigator.userAgent.includes("SE 2.X MetaSr 1.0"));
+	}, []);
 
 	return (
 		<div className={styles["link-list"]}>
