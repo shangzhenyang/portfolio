@@ -194,13 +194,13 @@ function LinkList() {
 			title: t("otherProjects"),
 			items: [
 				{
-					title: "Unofficial ChatGPT Client",
-					link: "https://chatgpt.shangzhenyang.com/",
+					title: t("unofficialChatgptClient"),
+					link: "https://www.ai-chat.dev/",
 					tags: [
 						"TypeScript",
 						"React"
 					],
-					when: !isChinaSite
+					when: true
 				},
 				{
 					title: t("uwCampusPaths"),
