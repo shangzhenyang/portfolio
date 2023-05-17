@@ -16,6 +16,10 @@ interface Group {
 }
 
 function LinkList() {
+	const isTencent = navigator.userAgent.includes("MicroMessenger") ||
+		navigator.userAgent.includes("QQ") ||
+		navigator.userAgent.includes("SE 2.X MetaSr 1.0");
+
 	const groups: Group[] = [
 		{
 			title: t("mainProjects"),
@@ -200,7 +204,7 @@ function LinkList() {
 						"TypeScript",
 						"React"
 					],
-					when: true
+					when: !isTencent
 				},
 				{
 					title: t("uwCampusPaths"),
