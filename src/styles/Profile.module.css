@@ -63,6 +63,7 @@
 	align-items: center;
 	box-shadow: 0 0 5px black;
 	display: flex;
+	overflow: auto;
 	text-align: center;
 	transition: width 1s;
 	width: calc(100% - 400px);

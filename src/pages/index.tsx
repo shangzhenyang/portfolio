@@ -35,7 +35,8 @@ export default function Home() {
 			"https://developer.apple.com",
 			"https://*.google-analytics.com",
 			"https://*.googletagmanager.com",
-			"https://hm.baidu.com"
+			"https://hm.baidu.com",
+			"https://browser-update.org"
 		],
 		"script-src": [
 			"'self'",
@@ -55,6 +56,20 @@ export default function Home() {
 	}).join("; ");
 
 	useEffect(() => {
+		import("browser-update").then(({ default: browserUpdate }) => {
+			browserUpdate({
+				required: { c: -1, e: -1, f: -1, o: -1, s: 0 },
+				insecure: true,
+				noclose: true,
+				no_permanent_hide: true,
+				notify_esr: true,
+				reminder: 0,
+				reminderClosed: 0,
+				style: "bottom",
+				unsupported: true,
+				url: "https://browsehappy.com/"
+			});
+		});
 		setTimeout(() => {
 			if (isChinaSite) {
 				const hm = document.createElement("script");
