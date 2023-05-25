@@ -60,11 +60,10 @@ export default function Home() {
 			browserUpdate({
 				required: { c: -1, e: -1, f: -1, o: -1, s: 0 },
 				insecure: true,
-				noclose: true,
 				no_permanent_hide: true,
 				notify_esr: true,
 				reminder: 0,
-				reminderClosed: 0,
+				reminderClosed: 1,
 				style: "bottom",
 				unsupported: true,
 				url: "https://browsehappy.com/"
