@@ -9,7 +9,11 @@ interface Props {
 	googlePlayLink: string;
 }
 
-function DownloadBar({ appName, appStoreLink, googlePlayLink }: Props) {
+function DownloadBar({
+	appName,
+	appStoreLink,
+	googlePlayLink
+}: Props): JSX.Element {
 	return (
 		<div className={styles["download-bar"]}>
 			<a href={appStoreLink}>

@@ -1,5 +1,8 @@
 {
-	"extends": "next/core-web-vitals",
+	"extends": [
+		"next/core-web-vitals",
+		"plugin:@typescript-eslint/recommended"
+	],
 	"rules": {
 		"arrow-body-style": [
 			"error",
@@ -43,6 +46,7 @@
 		"semi": [
 			"error",
 			"always"
-		]
+		],
+		"@typescript-eslint/explicit-function-return-type": "error"
 	}
 }

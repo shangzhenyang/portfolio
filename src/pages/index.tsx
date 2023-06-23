@@ -11,7 +11,7 @@ import Profile from "@/components/Profile";
 import bgImg from "@/images/reichenbach-falls.jpg";
 import styles from "@/styles/Home.module.css";
 
-export default function Home() {
+function Home(): JSX.Element {
 	const FAVICON = "/images/avatar.png";
 
 	const csp = {
@@ -130,3 +130,5 @@ export default function Home() {
 		</>
 	);
 }
+
+export default Home;

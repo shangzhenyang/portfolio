@@ -2,7 +2,7 @@ import { isChinaSite, t } from "@/i18n";
 
 import styles from "@/styles/Footer.module.css";
 
-function Footer() {
+function Footer(): JSX.Element {
 	return (
 		<footer className={styles["footer"]}>
 			<div>&copy; {new Date().getFullYear()} {t("shangzhenYang")}</div>

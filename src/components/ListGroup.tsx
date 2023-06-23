@@ -12,7 +12,7 @@ interface Props {
 	title: string;
 }
 
-function ListGroup({ className, items, title }: Props) {
+function ListGroup({ className, items, title }: Props): JSX.Element {
 	const itemElements = items.map(({
 		title,
 		link,

@@ -16,7 +16,7 @@ interface Group {
 	when: boolean;
 }
 
-function LinkList() {
+function LinkList(): JSX.Element {
 	const [isTencent, setIsTencent] = useState<boolean>(false);
 
 	const groups: Group[] = [
@@ -51,7 +51,7 @@ function LinkList() {
 				},
 				{
 					title: t("limeStartPage"),
-					link: "https://limestart.cn/intro",
+					link: "https://intro.limestart.cn/",
 					description: t("limeStartPageDescription"),
 					tags: [
 						"JavaScript",

@@ -12,7 +12,7 @@ import { isChinaSite, t } from "@/i18n";
 import avatar from "@/images/avatar-transparent.png";
 import styles from "@/styles/Profile.module.css";
 
-function Profile() {
+function Profile(): JSX.Element {
 	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinaSite);
 
 	const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
