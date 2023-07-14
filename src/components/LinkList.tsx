@@ -300,17 +300,23 @@ function LinkList(): JSX.Element {
 					className={styles["title"]}
 					href="#works"
 					target="_self"
-				>{t("myWorks")}</a>
+				>
+					{t("myWorks")}
+				</a>
 				{groupElements}
 			</div>
-			{isChinaSite && <div id="friends">
-				<a
-					className={styles["title"]}
-					href="#friends"
-					target="_self"
-				>友情链接</a>
-				{friendElements}
-			</div>}
+			{isChinaSite &&
+				<div id="friends">
+					<a
+						className={styles["title"]}
+						href="#friends"
+						target="_self"
+					>
+						友情链接
+					</a>
+					{friendElements}
+				</div>
+			}
 			<Footer />
 		</div>
 	);

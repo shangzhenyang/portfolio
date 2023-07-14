@@ -38,21 +38,27 @@ function Profile(): JSX.Element {
 				/>
 				<h1 className={styles["title"]}>{t("shangzhenYang")}</h1>
 				<div className={styles["description"]}>
-					{isChinaSite && <>
-						<div>现就读于华盛顿大学计算机系</div>
-						<div>
-							<a
-								className={styles["link"]}
-								href="https://www.retiehe.com/"
-								rel="noopener"
-							>热铁盒</a>
-							首席执行官兼软件工程师
-						</div>
-					</>}
-					{!isChinaSite && <>
-						<div>CS Student at University of Washington</div>
-						<div>Full-Stack Software Engineer</div>
-					</>}
+					{isChinaSite &&
+						<>
+							<div>现就读于华盛顿大学计算机系</div>
+							<div>
+								<a
+									className={styles["link"]}
+									href="https://www.retiehe.com/"
+									rel="noopener"
+								>
+									热铁盒
+								</a>
+								首席执行官兼软件工程师
+							</div>
+						</>
+					}
+					{!isChinaSite &&
+						<>
+							<div>CS Student at University of Washington</div>
+							<div>Full-Stack Software Engineer</div>
+						</>
+					}
 				</div>
 				<a
 					className={styles["btn"]}

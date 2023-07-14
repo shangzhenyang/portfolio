@@ -20,9 +20,7 @@ function ListGroup({ className, items, title }: Props): JSX.Element {
 			return <Fragment key={item.title}></Fragment>;
 		}
 		const tagElements = item.tags.map((tag) => {
-			return (
-				<span key={tag}>{tag}</span>
-			);
+			return <span key={tag}>{tag}</span>;
 		});
 		return (
 			<div key={item.title}>
