@@ -9,7 +9,7 @@
 	"encoder": "Encoder",
 	"encoderDescription": "Easily encode text into various formats.",
 	"limeStartPage": "Lime Start Page",
-	"limeStartPageDescription": "A beautiful New Tab page for your web browser.",
+	"limeStartPageDescription": "A beautiful New Tab page for web browsers.",
 	"mainProjects": "Main Projects",
 	"marquee": "Marquee",
 	"metaDescription": "This is Shangzhen Yang's portfolio website.",
@@ -27,6 +27,6 @@
 	"unofficialChatgptClient": "Unofficial ChatGPT Client",
 	"uwCampusPaths": "UW Campus Paths",
 	"webHosting": "Web Hosting",
-	"webHostingDescription": "An out-of-box web hosting service for beginners.",
+	"webHostingDescription": "An out-of-box web hosting service.",
 	"wordList": "Word List"
 }

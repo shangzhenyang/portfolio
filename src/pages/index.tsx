@@ -32,6 +32,7 @@ function Home(): JSX.Element {
 		],
 		"img-src": [
 			"'self'",
+			"https://assets.retiehe.com",
 			"https://developer.apple.com",
 			"https://*.google-analytics.com",
 			"https://*.googletagmanager.com",

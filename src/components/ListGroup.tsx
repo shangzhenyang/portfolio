@@ -1,10 +1,12 @@
+import { Fragment } from "react";
 import classnames from "classnames";
+import ExportedImage from "next-image-export-optimizer";
 
 import { isChinaSite } from "@/i18n";
 
 import styles from "@/styles/ListGroup.module.css";
 
-import type ListItem from "@/types/ListItem";
+import type { ListItem } from "@/types";
 
 interface Props {
 	className: string;
@@ -13,42 +15,54 @@ interface Props {
 }
 
 function ListGroup({ className, items, title }: Props): JSX.Element {
-	const itemElements = items.map(({
-		title,
-		link,
-		description,
-		extra,
-		tags,
-		when
-	}) => {
-		if (!when) {
-			return null;
+	const itemElements = items.map((item) => {
+		if (!item.when) {
+			return <Fragment key={item.title}></Fragment>;
 		}
-		const tagElements = tags.map((tag) => {
+		const tagElements = item.tags.map((tag) => {
 			return (
 				<span key={tag}>{tag}</span>
 			);
 		});
 		return (
-			<div key={title}>
+			<div key={item.title}>
 				<a
 					className={className}
-					href={link}
+					href={item.link}
 					rel="noopener"
 				>
-					{title}
-					{description && <div
-						className={styles["description"]}>
-						{description}
-					</div>}
+					{item.icon &&
+						<ExportedImage
+							className={styles["icon"]}
+							src={item.icon}
+							alt=""
+							width={35}
+							height={35}
+							draggable={false}
+							unoptimized={true}
+							placeholder="empty"
+						/>
+					}
+					<div>
+						{item.title}
+						{item.description &&
+							<div className={styles["description"]}>
+								{item.description}
+							</div>
+						}
+					</div>
 				</a>
-				{extra}
-				{!isChinaSite && tags.length > 0 && <div
-					className={classnames(
-						styles["description"],
-						styles["tags"]
-					)}
-				>{tagElements}</div>}
+				{item.extra}
+				{!isChinaSite && item.tags.length > 0 &&
+					<div
+						className={classnames(
+							styles["description"],
+							styles["tags"]
+						)}
+					>
+						{tagElements}
+					</div>
+				}
 			</div>
 		);
 	});

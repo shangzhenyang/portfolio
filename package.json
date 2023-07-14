@@ -31,6 +31,7 @@
 		"@typescript-eslint/parser": "^5.60.0",
 		"eslint": "^8.43.0",
 		"eslint-config-next": "^13.3.0",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
 		"next-image-export-optimizer": "^1.5.1",
 		"sharp": "^0.32.0",
 		"typescript": "^5.0.4"

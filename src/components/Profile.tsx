@@ -61,20 +61,24 @@ function Profile(): JSX.Element {
 					<FontAwesomeIcon icon={faGithub} />
 					GitHub
 				</a>
-				{!isChinaUser && <a
-					className={styles["btn"]}
-					href="https://www.linkedin.com/in/shangzhenyang/"
-				>
-					<FontAwesomeIcon icon={faLinkedin} />
-					LinkedIn
-				</a>}
-				{isChinaUser && <a
-					className={styles["btn"]}
-					href="https://space.bilibili.com/5931839"
-				>
-					<FontAwesomeIcon icon={faBilibili} />
-					{t("bilibili")}
-				</a>}
+				{!isChinaUser &&
+					<a
+						className={styles["btn"]}
+						href="https://www.linkedin.com/in/shangzhenyang/"
+					>
+						<FontAwesomeIcon icon={faLinkedin} />
+						LinkedIn
+					</a>
+				}
+				{isChinaUser &&
+					<a
+						className={styles["btn"]}
+						href="https://space.bilibili.com/5931839"
+					>
+						<FontAwesomeIcon icon={faBilibili} />
+						{t("bilibili")}
+					</a>
+				}
 			</div>
 		</main>
 	);

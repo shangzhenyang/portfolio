@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import classnames from "classnames";
 
 import { isChinaSite, t } from "@/i18n";
@@ -7,8 +7,12 @@ import Footer from "@/components/Footer";
 import ListGroup from "@/components/ListGroup";
 
 import styles from "@/styles/LinkList.module.css";
+import aiChatIcon from "@/images/ai-chat.png";
+import devmatchIcon from "@/images/devmatch.png";
+import uwClassmateIcon from "@/images/uw-classmate.png";
+import uwIcon from "@/images/uw.jpg";
 
-import type ListItem from "@/types/ListItem";
+import type { ListItem } from "@/types";
 
 interface Group {
 	title: string;
@@ -26,6 +30,7 @@ function LinkList(): JSX.Element {
 				{
 					title: t("airportal"),
 					link: "https://airportal.cn/",
+					icon: "https://assets.retiehe.com/ap-apple-touch-icon-2.png",
 					description: t("airportalDescription"),
 					extra: isChinaSite ? undefined : (
 						<DownloadBar
@@ -52,6 +57,7 @@ function LinkList(): JSX.Element {
 				{
 					title: t("limeStartPage"),
 					link: "https://intro.limestart.cn/",
+					icon: "https://assets.retiehe.com/lime-apple-touch-icon.png",
 					description: t("limeStartPageDescription"),
 					tags: [
 						"JavaScript",
@@ -67,6 +73,7 @@ function LinkList(): JSX.Element {
 				{
 					title: t("webHosting"),
 					link: "https://host.retiehe.com/",
+					icon: "https://assets.retiehe.com/host-icon-512.png",
 					description: t("webHostingDescription"),
 					tags: [
 						"TypeScript",
@@ -79,7 +86,8 @@ function LinkList(): JSX.Element {
 						"WAF",
 						"High Availability",
 						"HTML Parsing",
-						"HTTP Handling"
+						"HTTP Handling",
+						"Cypress"
 					],
 					when: true
 				}
@@ -128,7 +136,7 @@ function LinkList(): JSX.Element {
 					description: t("periodicTableDescription"),
 					tags: [
 						"TypeScript",
-						"npm"
+						"NPM Package"
 					],
 					when: true
 				},
@@ -146,12 +154,29 @@ function LinkList(): JSX.Element {
 			when: true
 		},
 		{
-			title: "Collaborative Project",
+			title: "Collaborative Projects",
 			items: [
+				{
+					title: "DevMatch",
+					link: "https://app.devmatch.io/",
+					icon: devmatchIcon.src,
+					description: "A coding assessment platform for hiring software engineers.",
+					tags: [
+						"TypeScript",
+						"Angular",
+						"Node.js",
+						"AWS Lambda",
+						"SQL",
+						"Cypress",
+						"DevOps"
+					],
+					when: true
+				},
 				{
 					title: "Hua Classmate",
 					link: "https://uwclassmate.com/",
-					description: "A course commenting website for UW students.",
+					icon: uwClassmateIcon.src,
+					description: "A course commenting website for students at University of Washington.",
 					tags: [
 						"JavaScript",
 						"React",
@@ -199,6 +224,7 @@ function LinkList(): JSX.Element {
 				{
 					title: t("unofficialChatgptClient"),
 					link: "https://www.ai-chat.dev/",
+					icon: aiChatIcon.src,
 					tags: [
 						"TypeScript",
 						"React"
@@ -208,6 +234,7 @@ function LinkList(): JSX.Element {
 				{
 					title: t("uwCampusPaths"),
 					link: "https://paths.shangzhenyang.com/",
+					icon: uwIcon.src,
 					tags: [
 						"TypeScript",
 						"React",
@@ -222,7 +249,7 @@ function LinkList(): JSX.Element {
 
 	const groupElements = groups.map((group) => {
 		if (!group.when) {
-			return null;
+			return <Fragment key={group.title}></Fragment>;
 		}
 		return (
 			<ListGroup

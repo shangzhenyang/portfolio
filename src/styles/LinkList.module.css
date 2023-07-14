@@ -2,22 +2,27 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	width: 400px;
 }
 
 .link-list {
+	animation: slide-in 1s ease-in-out;
 	display: flex;
 	flex: 0 0 400px;
 	flex-direction: column;
 	gap: 20px;
 	height: 100vh;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .list-item {
+	align-items: center;
 	background-color: rgba(0, 0, 0, .1);
 	cursor: default;
-	display: block;
-	line-height: 22px;
+	display: flex;
+	gap: 15px;
+	line-height: 1.5;
 	padding: 10px 25px;
 	transition: background-color .25s;
 }
@@ -32,6 +37,11 @@
 .list-item:active,
 .list-item.in-group:active {
 	background-color: rgba(255, 255, 255, .05);
+}
+
+.list-item img {
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .2);
 }
 
 .list-item.in-group {
@@ -55,7 +65,21 @@
 	border-color: rgba(255, 255, 255, .2);
 }
 
+@keyframes slide-in {
+	from {
+		flex: 0;
+	}
+
+	to {
+		flex: 0 0 400px;
+	}
+}
+
 @media (max-width: 800px) {
+	.groups {
+		width: unset;
+	}
+
 	.link-list {
 		overflow: unset;
 	}
