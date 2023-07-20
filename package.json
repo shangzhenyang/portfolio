@@ -3,19 +3,18 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
-		"dev:cn": "NEXT_PUBLIC_LOCALE=cn next dev",
 		"build": "next build && next-image-export-optimizer",
 		"build:cn": "NEXT_PUBLIC_LOCALE=cn npm run build",
+		"dev": "next dev",
+		"dev:cn": "NEXT_PUBLIC_LOCALE=cn next dev",
 		"dist": "npm run build:cn",
-		"start": "npx serve out",
-		"lint": "next lint"
+		"lint": "eslint . --ext .ts,.tsx --fix",
+		"start": "npx serve out"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.4.0",
 		"@fortawesome/free-brands-svg-icons": "^6.4.0",
 		"@fortawesome/react-fontawesome": "^0.2.0",
-		"browser-update": "^3.3.44",
 		"classnames": "^2.3.2",
 		"next": "^13.4.0",
 		"react": "^18.2.0",
@@ -23,7 +22,6 @@
 		"react-ga4": "^2.1.0"
 	},
 	"devDependencies": {
-		"@types/browser-update": "^3.3.0",
 		"@types/node": "^18.15.12",
 		"@types/react": "^18.0.37",
 		"@types/react-dom": "^18.0.11",

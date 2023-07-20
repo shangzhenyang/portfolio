@@ -50,9 +50,9 @@ function LinkList(): JSX.Element {
 						"PWA",
 						"S3",
 						"WebSocket",
-						"RSA Encryption"
+						"RSA Encryption",
 					],
-					when: true
+					when: true,
 				},
 				{
 					title: t("limeStartPage"),
@@ -66,9 +66,9 @@ function LinkList(): JSX.Element {
 						"NoSQL",
 						"PWA",
 						"Chrome Extension",
-						"Load Balancing"
+						"Load Balancing",
 					],
-					when: true
+					when: true,
 				},
 				{
 					title: t("webHosting"),
@@ -87,12 +87,12 @@ function LinkList(): JSX.Element {
 						"High Availability",
 						"HTML Parsing",
 						"HTTP Handling",
-						"Cypress"
+						"Cypress",
 					],
-					when: true
-				}
+					when: true,
+				},
 			],
-			when: true
+			when: true,
 		},
 		{
 			title: t("openSourcedProjects"),
@@ -104,9 +104,9 @@ function LinkList(): JSX.Element {
 					tags: [
 						"TypeScript",
 						"React",
-						"PWA"
+						"PWA",
 					],
-					when: true
+					when: true,
 				},
 				{
 					title: t("randomNumber"),
@@ -115,9 +115,9 @@ function LinkList(): JSX.Element {
 					tags: [
 						"TypeScript",
 						"Vue",
-						"PWA"
+						"PWA",
 					],
-					when: true
+					when: true,
 				},
 				{
 					title: t("calculator"),
@@ -126,9 +126,9 @@ function LinkList(): JSX.Element {
 					tags: [
 						"TypeScript",
 						"React",
-						"PWA"
+						"PWA",
 					],
-					when: true
+					when: true,
 				},
 				{
 					title: t("periodicTable"),
@@ -136,9 +136,9 @@ function LinkList(): JSX.Element {
 					description: t("periodicTableDescription"),
 					tags: [
 						"TypeScript",
-						"NPM Package"
+						"NPM Package",
 					],
-					when: true
+					when: true,
 				},
 				{
 					title: t("bingWallpaperApi"),
@@ -146,12 +146,12 @@ function LinkList(): JSX.Element {
 					description: t("bingWallpaperApiDescription"),
 					tags: [
 						"TypeScript",
-						"Serverless"
+						"Serverless",
 					],
-					when: true
-				}
+					when: true,
+				},
 			],
-			when: true
+			when: true,
 		},
 		{
 			title: "Collaborative Projects",
@@ -168,9 +168,9 @@ function LinkList(): JSX.Element {
 						"AWS Lambda",
 						"SQL",
 						"Cypress",
-						"DevOps"
+						"DevOps",
 					],
-					when: true
+					when: true,
 				},
 				{
 					title: "Hua Classmate",
@@ -181,12 +181,12 @@ function LinkList(): JSX.Element {
 						"JavaScript",
 						"React",
 						"Node.js",
-						"SQL"
+						"SQL",
 					],
-					when: true
-				}
+					when: true,
+				},
 			],
-			when: !isChinaSite
+			when: !isChinaSite,
 		},
 		{
 			title: t("toolbox"),
@@ -195,41 +195,41 @@ function LinkList(): JSX.Element {
 					title: t("wordList"),
 					link: "https://tool.retiehe.com/wordlist",
 					tags: [],
-					when: true
+					when: true,
 				},
 				{
 					title: t("timer"),
 					link: "https://tool.retiehe.com/timer",
 					tags: [],
-					when: true
+					when: true,
 				},
 				{
 					title: t("marquee"),
 					link: "https://tool.retiehe.com/marquee",
 					tags: [],
-					when: true
+					when: true,
 				},
 				{
 					title: t("textEditor"),
 					link: "https://tool.retiehe.com/texteditor",
 					tags: [],
-					when: true
-				}
+					when: true,
+				},
 			],
-			when: true
+			when: true,
 		},
 		{
 			title: t("otherProjects"),
 			items: [
 				{
-					title: t("unofficialChatgptClient"),
+					title: "Unofficial ChatGPT Client",
 					link: "https://www.ai-chat.dev/",
 					icon: aiChatIcon.src,
 					tags: [
 						"TypeScript",
-						"React"
+						"React",
 					],
-					when: !isTencent
+					when: !isChinaSite && !isTencent,
 				},
 				{
 					title: t("uwCampusPaths"),
@@ -238,13 +238,13 @@ function LinkList(): JSX.Element {
 					tags: [
 						"TypeScript",
 						"React",
-						"Dijkstra's"
+						"Dijkstra's",
 					],
-					when: true
-				}
+					when: true,
+				},
 			],
-			when: true
-		}
+			when: true,
+		},
 	];
 
 	const groupElements = groups.map((group) => {
@@ -268,12 +268,12 @@ function LinkList(): JSX.Element {
 		},
 		{
 			title: "空白的羽翼",
-			link: "https://blankwings.com/"
+			link: "https://blankwings.com/",
 		},
 		{
 			title: "Idealclover",
-			link: "https://idealclover.top/"
-		}
+			link: "https://idealclover.top/",
+		},
 	];
 
 	const friendElements = friends.map(({ link, title }) => {

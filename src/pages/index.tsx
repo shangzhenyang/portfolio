@@ -16,19 +16,19 @@ function Home(): JSX.Element {
 
 	const csp = {
 		"default-src": [
-			"'none'"
+			"'none'",
 		],
 		"base-uri": [
-			"'none'"
+			"'none'",
 		],
 		"connect-src": [
 			"'self'",
 			"https://*.google-analytics.com",
 			"https://*.analytics.google.com",
-			"https://*.googletagmanager.com"
+			"https://*.googletagmanager.com",
 		],
 		"form-action": [
-			"'none'"
+			"'none'",
 		],
 		"img-src": [
 			"'self'",
@@ -37,17 +37,16 @@ function Home(): JSX.Element {
 			"https://*.google-analytics.com",
 			"https://*.googletagmanager.com",
 			"https://hm.baidu.com",
-			"https://browser-update.org"
 		],
 		"script-src": [
 			"'self'",
 			"https://www.googletagmanager.com",
-			"https://hm.baidu.com"
+			"https://hm.baidu.com",
 		],
 		"style-src": [
 			"'self'",
-			"'unsafe-inline'"
-		]
+			"'unsafe-inline'",
+		],
 	};
 	if (process.env.NODE_ENV === "development") {
 		csp["script-src"].push("'unsafe-eval'");
@@ -57,19 +56,6 @@ function Home(): JSX.Element {
 	}).join("; ");
 
 	useEffect(() => {
-		import("browser-update").then(({ default: browserUpdate }) => {
-			browserUpdate({
-				required: { c: -1, e: -1, f: -1, o: -1, s: 0 },
-				insecure: true,
-				no_permanent_hide: true,
-				notify_esr: true,
-				reminder: 0,
-				reminderClosed: 1,
-				style: "bottom",
-				unsupported: true,
-				url: "https://browsehappy.com/"
-			});
-		});
 		setTimeout(() => {
 			if (isChinaSite) {
 				const hm = document.createElement("script");

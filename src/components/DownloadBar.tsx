@@ -12,7 +12,7 @@ interface Props {
 function DownloadBar({
 	appName,
 	appStoreLink,
-	googlePlayLink
+	googlePlayLink,
 }: Props): JSX.Element {
 	return (
 		<div className={styles["download-bar"]}>
