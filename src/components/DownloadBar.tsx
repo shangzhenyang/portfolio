@@ -1,7 +1,6 @@
-import ExportedImage from "next-image-export-optimizer";
-
 import googlePlayBadge from "@/images/google-play.png";
 import styles from "@/styles/DownloadBar.module.css";
+import ExportedImage from "next-image-export-optimizer";
 
 interface Props {
 	appName: string;

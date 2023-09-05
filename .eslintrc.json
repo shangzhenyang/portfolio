@@ -4,6 +4,14 @@
 		"plugin:@typescript-eslint/recommended",
 		"plugin:jsx-a11y/recommended"
 	],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"project": "./tsconfig.json",
+		"sourceType": "module"
+	},
+	"plugins": [
+		"no-relative-import-paths"
+	],
 	"rules": {
 		"arrow-body-style": [
 			"error",
@@ -42,7 +50,25 @@
 			"error",
 			"unix"
 		],
+		"object-shorthand": [
+			"error",
+			"never"
+		],
 		"no-mixed-operators": "error",
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
+		"no-relative-import-paths/no-relative-import-paths": [
+			"error",
+			{
+				"prefix": "@",
+				"rootDir": "./src"
+			}
+		],
+		"prefer-arrow-callback": "error",
 		"prefer-const": "error",
 		"quotes": [
 			"error",
@@ -53,6 +79,14 @@
 			"error",
 			"always"
 		],
-		"@typescript-eslint/explicit-function-return-type": "error"
+		"@typescript-eslint/consistent-type-imports": [
+			"error",
+			{
+				"fixStyle": "separate-type-imports"
+			}
+		],
+		"@typescript-eslint/explicit-function-return-type": "error",
+		"@typescript-eslint/no-non-null-assertion": "error",
+		"@typescript-eslint/no-unsafe-assignment": "error"
 	}
 }

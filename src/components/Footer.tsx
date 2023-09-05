@@ -1,5 +1,4 @@
 import { isChinaSite, t } from "@/i18n";
-
 import styles from "@/styles/Footer.module.css";
 
 function Footer(): JSX.Element {

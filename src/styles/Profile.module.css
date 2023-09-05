@@ -64,6 +64,8 @@
 	box-shadow: 0 0 5px black;
 	display: flex;
 	flex: 1;
+	flex-direction: column;
+	justify-content: center;
 	overflow: auto;
 	text-align: center;
 	width: calc(100% - 400px);
@@ -76,6 +78,12 @@
 .title {
 	font-size: 24px;
 	margin: 20px 0 10px;
+}
+
+@media (max-height: 400px) and (max-width: 800px) {
+	.profile {
+		flex-direction: row;
+	}
 }
 
 @media (max-width: 800px) {

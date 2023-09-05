@@ -1,6 +1,5 @@
-import { Main, Head, Html, NextScript } from "next/document";
-
 import { isChinaSite } from "@/i18n";
+import { Head, Html, Main, NextScript } from "next/document";
 
 function Document(): JSX.Element {
 	return (

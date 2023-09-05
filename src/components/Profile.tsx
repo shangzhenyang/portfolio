@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
-import ExportedImage from "next-image-export-optimizer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { isChinaSite, t } from "@/i18n";
+import avatar from "@/images/avatar-transparent.png";
+import styles from "@/styles/Profile.module.css";
 import {
 	faBilibili,
 	faGithub,
 	faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-
-import { isChinaSite, t } from "@/i18n";
-
-import avatar from "@/images/avatar-transparent.png";
-import styles from "@/styles/Profile.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ExportedImage from "next-image-export-optimizer";
+import { useEffect, useState } from "react";
 
 function Profile(): JSX.Element {
 	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinaSite);
@@ -60,6 +58,8 @@ function Profile(): JSX.Element {
 						</>
 					}
 				</div>
+			</div>
+			<div>
 				<a
 					className={styles["btn"]}
 					href="https://github.com/shangzhenyang"

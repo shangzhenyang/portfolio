@@ -1,18 +1,15 @@
-import { Fragment, useEffect, useState } from "react";
-import classnames from "classnames";
-
-import { isChinaSite, t } from "@/i18n";
 import DownloadBar from "@/components/DownloadBar";
 import Footer from "@/components/Footer";
 import ListGroup from "@/components/ListGroup";
-
-import styles from "@/styles/LinkList.module.css";
+import { isChinaSite, t } from "@/i18n";
 import aiChatIcon from "@/images/ai-chat.png";
 import devmatchIcon from "@/images/devmatch.png";
 import uwClassmateIcon from "@/images/uw-classmate.png";
 import uwIcon from "@/images/uw.jpg";
-
+import styles from "@/styles/LinkList.module.css";
 import type { ListItem } from "@/types";
+import classnames from "classnames";
+import { Fragment, useEffect, useState } from "react";
 
 interface Group {
 	title: string;

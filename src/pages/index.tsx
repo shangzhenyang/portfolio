@@ -1,15 +1,13 @@
-import { useEffect } from "react";
-import Head from "next/head";
-import classnames from "classnames";
-import ExportedImage from "next-image-export-optimizer";
-import ReactGA from "react-ga4";
-
-import { isChinaSite, t } from "@/i18n";
 import LinkList from "@/components/LinkList";
 import Profile from "@/components/Profile";
-
+import { isChinaSite, t } from "@/i18n";
 import bgImg from "@/images/reichenbach-falls.jpg";
 import styles from "@/styles/Home.module.css";
+import classnames from "classnames";
+import ExportedImage from "next-image-export-optimizer";
+import Head from "next/head";
+import { useEffect } from "react";
+import ReactGA from "react-ga4";
 
 function Home(): JSX.Element {
 	const FAVICON = "/images/avatar.png";
@@ -80,7 +78,7 @@ function Home(): JSX.Element {
 				/>
 				<meta
 					name="viewport"
-					content="width=device-width, initial-scale=1, viewport-fit=cover"
+					content="width=device-width, initial-scale=1"
 				/>
 				<meta
 					httpEquiv="Content-Security-Policy"
