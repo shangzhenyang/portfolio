@@ -50,10 +50,6 @@
 			"error",
 			"unix"
 		],
-		"object-shorthand": [
-			"error",
-			"never"
-		],
 		"no-mixed-operators": "error",
 		"no-multiple-empty-lines": [
 			"error",
@@ -67,6 +63,10 @@
 				"prefix": "@",
 				"rootDir": "./src"
 			}
+		],
+		"object-shorthand": [
+			"error",
+			"never"
 		],
 		"prefer-arrow-callback": "error",
 		"prefer-const": "error",
