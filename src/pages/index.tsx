@@ -3,7 +3,7 @@ import Profile from "@/components/Profile";
 import { isChinaSite, t } from "@/i18n";
 import bgImg from "@/images/reichenbach-falls.jpg";
 import styles from "@/styles/Home.module.css";
-import classnames from "classnames";
+import classNames from "classnames";
 import ExportedImage from "next-image-export-optimizer";
 import Head from "next/head";
 import { useEffect } from "react";
@@ -99,7 +99,7 @@ function Home(): JSX.Element {
 				<link rel="apple-touch-icon" href={FAVICON} />
 			</Head>
 			<ExportedImage
-				className={classnames(styles["bg"], styles["bg-img"])}
+				className={classNames(styles["bg"], styles["bg-img"])}
 				src={bgImg}
 				alt=""
 				height={1080}
@@ -107,7 +107,7 @@ function Home(): JSX.Element {
 				placeholder="empty"
 				priority={true}
 			/>
-			<div className={classnames(styles["bg"], styles["bg-cover"])}></div>
+			<div className={classNames(styles["bg"], styles["bg-cover"])}></div>
 			<div className={styles["root"]}>
 				<Profile />
 				<LinkList />

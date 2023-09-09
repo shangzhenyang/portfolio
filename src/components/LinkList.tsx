@@ -8,7 +8,7 @@ import uwClassmateIcon from "@/images/uw-classmate.png";
 import uwIcon from "@/images/uw.jpg";
 import styles from "@/styles/LinkList.module.css";
 import { ListItem } from "@/types";
-import classnames from "classnames";
+import classNames from "classnames";
 import { Fragment, useEffect, useState } from "react";
 
 interface Group {
@@ -250,7 +250,7 @@ function LinkList(): JSX.Element {
 		}
 		return (
 			<ListGroup
-				className={classnames(styles["list-item"], styles["in-group"])}
+				className={classNames(styles["list-item"], styles["in-group"])}
 				key={group.title}
 				items={group.items}
 				title={group.title}

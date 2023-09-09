@@ -1,7 +1,7 @@
 import { isChinaSite } from "@/i18n";
 import styles from "@/styles/ListGroup.module.css";
 import { ListItem } from "@/types";
-import classnames from "classnames";
+import classNames from "classnames";
 import ExportedImage from "next-image-export-optimizer";
 import { Fragment } from "react";
 
@@ -50,7 +50,7 @@ function ListGroup({ className, items, title }: ListGroupProps): JSX.Element {
 				{item.extra}
 				{!isChinaSite && item.tags.length > 0 &&
 					<div
-						className={classnames(
+						className={classNames(
 							styles["description"],
 							styles["tags"],
 						)}
