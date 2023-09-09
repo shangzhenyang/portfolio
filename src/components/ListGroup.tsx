@@ -5,13 +5,13 @@ import classnames from "classnames";
 import ExportedImage from "next-image-export-optimizer";
 import { Fragment } from "react";
 
-interface Props {
+interface ListGroupProps {
 	className: string;
 	items: ListItem[];
 	title: string;
 }
 
-function ListGroup({ className, items, title }: Props): JSX.Element {
+function ListGroup({ className, items, title }: ListGroupProps): JSX.Element {
 	const itemElements = items.map((item) => {
 		if (!item.when) {
 			return <Fragment key={item.title}></Fragment>;

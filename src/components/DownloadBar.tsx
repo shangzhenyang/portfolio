@@ -2,7 +2,7 @@ import googlePlayBadge from "@/images/google-play.png";
 import styles from "@/styles/DownloadBar.module.css";
 import ExportedImage from "next-image-export-optimizer";
 
-interface Props {
+interface DownloadBarProps {
 	appName: string;
 	appStoreLink: string;
 	googlePlayLink: string;
@@ -12,7 +12,7 @@ function DownloadBar({
 	appName,
 	appStoreLink,
 	googlePlayLink,
-}: Props): JSX.Element {
+}: DownloadBarProps): JSX.Element {
 	return (
 		<div className={styles["download-bar"]}>
 			<a href={appStoreLink}>

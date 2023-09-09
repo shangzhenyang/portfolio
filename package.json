@@ -29,7 +29,7 @@
 		"@typescript-eslint/parser": "^6.6.0",
 		"eslint": "^8.49.0",
 		"eslint-config-next": "^13.4.19",
-		"eslint-config-rth": "^1.0.1",
+		"eslint-config-rth": "^1.0.2",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
 		"eslint-plugin-no-relative-import-paths": "^1.5.2",
 		"next-image-export-optimizer": "^1.8.5",
