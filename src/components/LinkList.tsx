@@ -7,7 +7,7 @@ import devmatchIcon from "@/images/devmatch.png";
 import uwClassmateIcon from "@/images/uw-classmate.png";
 import uwIcon from "@/images/uw.jpg";
 import styles from "@/styles/LinkList.module.css";
-import type { ListItem } from "@/types";
+import { ListItem } from "@/types";
 import classnames from "classnames";
 import { Fragment, useEffect, useState } from "react";
 
@@ -22,12 +22,8 @@ function LinkList(): JSX.Element {
 
 	const groups: Group[] = [
 		{
-			title: t("mainProjects"),
 			items: [
 				{
-					title: t("airportal"),
-					link: "https://airportal.cn/",
-					icon: "https://assets.retiehe.com/ap-apple-touch-icon-2.png",
 					description: t("airportalDescription"),
 					extra: isChinaSite ? undefined : (
 						<DownloadBar
@@ -36,6 +32,8 @@ function LinkList(): JSX.Element {
 							googlePlayLink="https://play.google.com/store/apps/details?id=cn.airportal&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
 						/>
 					),
+					icon: "https://assets.retiehe.com/ap-apple-touch-icon-2.png",
+					link: "https://airportal.cn/",
 					tags: [
 						"JavaScript",
 						"Electron",
@@ -49,13 +47,13 @@ function LinkList(): JSX.Element {
 						"WebSocket",
 						"RSA Encryption",
 					],
+					title: t("airportal"),
 					when: true,
 				},
 				{
-					title: t("limeStartPage"),
-					link: "https://intro.limestart.cn/",
-					icon: "https://assets.retiehe.com/lime-apple-touch-icon.png",
 					description: t("limeStartPageDescription"),
+					icon: "https://assets.retiehe.com/lime-apple-touch-icon.png",
+					link: "https://intro.limestart.cn/",
 					tags: [
 						"JavaScript",
 						"Vue",
@@ -65,13 +63,13 @@ function LinkList(): JSX.Element {
 						"Chrome Extension",
 						"Load Balancing",
 					],
+					title: t("limeStartPage"),
 					when: true,
 				},
 				{
-					title: t("webHosting"),
-					link: "https://host.retiehe.com/",
-					icon: "https://assets.retiehe.com/host-icon-512.png",
 					description: t("webHostingDescription"),
+					icon: "https://assets.retiehe.com/host-icon-512.png",
+					link: "https://host.retiehe.com/",
 					tags: [
 						"TypeScript",
 						"Vue",
@@ -86,78 +84,78 @@ function LinkList(): JSX.Element {
 						"HTTP Handling",
 						"Cypress",
 					],
+					title: t("webHosting"),
 					when: true,
 				},
 			],
+			title: t("mainProjects"),
 			when: true,
 		},
 		{
-			title: t("openSourcedProjects"),
 			items: [
 				{
-					title: t("encoder"),
-					link: "https://encoder.shangzhenyang.com/",
 					description: t("encoderDescription"),
+					link: "https://encoder.shangzhenyang.com/",
 					tags: [
 						"TypeScript",
 						"React",
 						"PWA",
 					],
+					title: t("encoder"),
 					when: true,
 				},
 				{
-					title: t("randomNumber"),
-					link: "https://random.shangzhenyang.com/",
 					description: t("randomNumberDescription"),
+					link: "https://random.shangzhenyang.com/",
 					tags: [
 						"TypeScript",
 						"Vue",
 						"PWA",
 					],
+					title: t("randomNumber"),
 					when: true,
 				},
 				{
-					title: t("calculator"),
-					link: "https://calc.shangzhenyang.com/",
 					description: t("calculatorDescription"),
+					link: "https://calc.shangzhenyang.com/",
 					tags: [
 						"TypeScript",
 						"React",
 						"PWA",
 					],
+					title: t("calculator"),
 					when: true,
 				},
 				{
-					title: t("periodicTable"),
-					link: "https://github.com/shangzhenyang/periodic-table",
 					description: t("periodicTableDescription"),
+					link: "https://github.com/shangzhenyang/periodic-table",
 					tags: [
 						"TypeScript",
 						"NPM Package",
 					],
+					title: t("periodicTable"),
 					when: true,
 				},
 				{
-					title: t("bingWallpaperApi"),
-					link: "https://github.com/shangzhenyang/bing-wallpaper",
 					description: t("bingWallpaperApiDescription"),
+					link: "https://github.com/shangzhenyang/bing-wallpaper",
 					tags: [
 						"TypeScript",
 						"Serverless",
 					],
+					title: t("bingWallpaperApi"),
 					when: true,
 				},
 			],
+			title: t("openSourcedProjects"),
 			when: true,
 		},
 		{
-			title: "Collaborative Projects",
 			items: [
 				{
-					title: "DevMatch",
-					link: "https://app.devmatch.io/",
-					icon: devmatchIcon.src,
 					description: "A coding assessment platform for hiring software engineers.",
+					icon: devmatchIcon.src,
+					link: "https://app.devmatch.io/",
 					tags: [
 						"TypeScript",
 						"Angular",
@@ -167,79 +165,81 @@ function LinkList(): JSX.Element {
 						"Cypress",
 						"DevOps",
 					],
+					title: "DevMatch",
 					when: true,
 				},
 				{
-					title: "Hua Classmate",
-					link: "https://uwclassmate.com/",
-					icon: uwClassmateIcon.src,
 					description: "A course commenting website for students at University of Washington.",
+					icon: uwClassmateIcon.src,
+					link: "https://uwclassmate.com/",
 					tags: [
 						"JavaScript",
 						"React",
 						"Node.js",
 						"SQL",
 					],
+					title: "Hua Classmate",
 					when: true,
 				},
 			],
+			title: "Collaborative Projects",
 			when: !isChinaSite,
 		},
 		{
-			title: t("toolbox"),
 			items: [
 				{
-					title: t("wordList"),
 					link: "https://tool.retiehe.com/wordlist",
 					tags: [],
+					title: t("wordList"),
 					when: true,
 				},
 				{
-					title: t("timer"),
 					link: "https://tool.retiehe.com/timer",
 					tags: [],
+					title: t("timer"),
 					when: true,
 				},
 				{
-					title: t("marquee"),
 					link: "https://tool.retiehe.com/marquee",
 					tags: [],
+					title: t("marquee"),
 					when: true,
 				},
 				{
-					title: t("textEditor"),
 					link: "https://tool.retiehe.com/texteditor",
 					tags: [],
+					title: t("textEditor"),
 					when: true,
 				},
 			],
+			title: t("toolbox"),
 			when: true,
 		},
 		{
-			title: t("otherProjects"),
 			items: [
 				{
-					title: "Unofficial ChatGPT Client",
-					link: "https://www.ai-chat.dev/",
 					icon: aiChatIcon.src,
+					link: "https://www.ai-chat.dev/",
 					tags: [
 						"TypeScript",
 						"React",
 					],
+					title: "Unofficial ChatGPT Client",
 					when: !isChinaSite && !isTencent,
 				},
 				{
-					title: t("uwCampusPaths"),
-					link: "https://paths.shangzhenyang.com/",
 					icon: uwIcon.src,
+					link: "https://paths.shangzhenyang.com/",
 					tags: [
 						"TypeScript",
 						"React",
 						"Dijkstra's",
 					],
+					title: t("uwCampusPaths"),
 					when: true,
 				},
 			],
+			title: t("otherProjects"),
 			when: true,
 		},
 	];
@@ -260,16 +260,16 @@ function LinkList(): JSX.Element {
 
 	const friends = [
 		{
-			title: "毛若昕",
 			link: "https://maorx.cn/",
+			title: "毛若昕",
 		},
 		{
-			title: "空白的羽翼",
 			link: "https://blankwings.com/",
+			title: "空白的羽翼",
 		},
 		{
-			title: "Idealclover",
 			link: "https://idealclover.top/",
+			title: "Idealclover",
 		},
 	];
 
@@ -280,7 +280,9 @@ function LinkList(): JSX.Element {
 				href={link}
 				key={title}
 				rel="noopener"
-			>{title}</a>
+			>
+				{title}
+			</a>
 		);
 	});
 

@@ -1,6 +1,6 @@
 import { isChinaSite } from "@/i18n";
 import styles from "@/styles/ListGroup.module.css";
-import type { ListItem } from "@/types";
+import { ListItem } from "@/types";
 import classnames from "classnames";
 import ExportedImage from "next-image-export-optimizer";
 import { Fragment } from "react";

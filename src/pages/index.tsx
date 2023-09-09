@@ -13,9 +13,6 @@ function Home(): JSX.Element {
 	const FAVICON = "/images/avatar.png";
 
 	const csp = {
-		"default-src": [
-			"'none'",
-		],
 		"base-uri": [
 			"'none'",
 		],
@@ -24,6 +21,9 @@ function Home(): JSX.Element {
 			"https://*.google-analytics.com",
 			"https://*.analytics.google.com",
 			"https://*.googletagmanager.com",
+		],
+		"default-src": [
+			"'none'",
 		],
 		"form-action": [
 			"'none'",

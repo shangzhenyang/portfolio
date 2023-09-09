@@ -1,92 +1,9 @@
 {
 	"extends": [
 		"next/core-web-vitals",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:jsx-a11y/recommended"
-	],
-	"parserOptions": {
-		"ecmaVersion": "latest",
-		"project": "./tsconfig.json",
-		"sourceType": "module"
-	},
-	"plugins": [
-		"no-relative-import-paths"
+		"rth/react"
 	],
 	"rules": {
-		"arrow-body-style": [
-			"error",
-			"always"
-		],
-		"arrow-parens": [
-			"error",
-			"always"
-		],
-		"comma-dangle": [
-			"error",
-			"always-multiline"
-		],
-		"curly": [
-			"error",
-			"all"
-		],
-		"default-case": "error",
-		"default-case-last": "error",
-		"eol-last": [
-			"error",
-			"always"
-		],
-		"eqeqeq": [
-			"error",
-			"always"
-		],
-		"indent": [
-			"error",
-			"tab",
-			{
-				"SwitchCase": 1
-			}
-		],
-		"linebreak-style": [
-			"error",
-			"unix"
-		],
-		"no-mixed-operators": "error",
-		"no-multiple-empty-lines": [
-			"error",
-			{
-				"max": 1
-			}
-		],
-		"no-relative-import-paths/no-relative-import-paths": [
-			"error",
-			{
-				"prefix": "@",
-				"rootDir": "./src"
-			}
-		],
-		"object-shorthand": [
-			"error",
-			"never"
-		],
-		"prefer-arrow-callback": "error",
-		"prefer-const": "error",
-		"quotes": [
-			"error",
-			"double"
-		],
-		"react/jsx-closing-bracket-location": "error",
-		"semi": [
-			"error",
-			"always"
-		],
-		"@typescript-eslint/consistent-type-imports": [
-			"error",
-			{
-				"fixStyle": "separate-type-imports"
-			}
-		],
-		"@typescript-eslint/explicit-function-return-type": "error",
-		"@typescript-eslint/no-non-null-assertion": "error",
-		"@typescript-eslint/no-unsafe-assignment": "error"
+		"max-len": "off"
 	}
 }
