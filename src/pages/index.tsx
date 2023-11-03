@@ -7,9 +7,9 @@ import classNames from "classnames";
 import ExportedImage from "next-image-export-optimizer";
 import Head from "next/head";
 import { useEffect } from "react";
-import ReactGA from "react-ga4";
 
 function Home(): JSX.Element {
+	const BAIDU_STAT = "https://hm.baidu.com";
 	const FAVICON = "/images/avatar.png";
 
 	const csp = {
@@ -18,9 +18,6 @@ function Home(): JSX.Element {
 		],
 		"connect-src": [
 			"'self'",
-			"https://*.google-analytics.com",
-			"https://*.analytics.google.com",
-			"https://*.googletagmanager.com",
 		],
 		"default-src": [
 			"'none'",
@@ -32,21 +29,21 @@ function Home(): JSX.Element {
 			"'self'",
 			"https://assets.retiehe.com",
 			"https://developer.apple.com",
-			"https://*.google-analytics.com",
-			"https://*.googletagmanager.com",
-			"https://hm.baidu.com",
 		],
 		"script-src": [
 			"'self'",
-			"https://www.googletagmanager.com",
-			"https://hm.baidu.com",
 		],
 		"style-src": [
 			"'self'",
 			"'unsafe-inline'",
 		],
 	};
+	if (isChinaSite) {
+		csp["img-src"].push(BAIDU_STAT);
+		csp["script-src"].push(BAIDU_STAT);
+	}
 	if (process.env.NODE_ENV === "development") {
+		csp["script-src"].push("https://va.vercel-scripts.com");
 		csp["script-src"].push("'unsafe-eval'");
 	}
 	const cspStr = Object.entries(csp).map(([key, value]) => {
@@ -54,17 +51,14 @@ function Home(): JSX.Element {
 	}).join("; ");
 
 	useEffect(() => {
-		setTimeout(() => {
-			if (isChinaSite) {
+		if (isChinaSite) {
+			setTimeout(() => {
 				const hm = document.createElement("script");
 				hm.async = true;
-				hm.src = "https://hm.baidu.com/hm.js?d80574fac90c818f3df7d0b7d1d75419";
+				hm.src = BAIDU_STAT + "/hm.js?d80574fac90c818f3df7d0b7d1d75419";
 				document.body.appendChild(hm);
-			} else {
-				ReactGA.initialize("G-DKZ5ZLG4FT");
-				ReactGA.send("pageview");
-			}
-		}, 1000);
+			}, 1000);
+		}
 	}, []);
 
 	return (
