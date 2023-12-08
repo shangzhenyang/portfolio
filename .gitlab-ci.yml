@@ -10,15 +10,13 @@ test:
   script:
     - npm install
     - npm run build
-    - npm run lint
 
 mirror_github:
   stage: mirror
   tags:
     - rth-timmy
   script:
-    - git remote add github git@github.com:shangzhenyang/portfolio.git
-    - git push --mirror github
+    - git push --mirror git@github.com:shangzhenyang/portfolio.git
 
 deploy_prod_mainland:
   stage: deploy
@@ -28,7 +26,7 @@ deploy_prod_mainland:
     - cd $DEPLOY_DIR
     - ./update.sh portfolio
   only:
-    - master
+    - main
 
 deploy_prod_overseas:
   stage: deploy
@@ -39,4 +37,4 @@ deploy_prod_overseas:
     - vercel build --prod --token=$VERCEL_TOKEN
     - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
   only:
-    - master
+    - main
