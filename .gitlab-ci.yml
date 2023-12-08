@@ -1,0 +1,51 @@
+stages:
+  - test
+  - mirror
+  - deploy
+
+test:
+  stage: test
+  tags:
+    - rth-timmy
+  script:
+    - npm install
+    - npm run build
+
+mirror_github:
+  stage: mirror
+  variables:
+    GIT_STRATEGY: none
+  tags:
+    - rth-timmy
+  script:
+    - rm -rf ./$CI_PROJECT_NAME
+    - git clone $CI_REPOSITORY_URL ./$CI_PROJECT_NAME
+    - cd ./$CI_PROJECT_NAME
+    - git checkout $CI_COMMIT_REF_NAME
+    - git remote add github git@github.com:$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME.git
+    - git push github
+    - cd ..
+    - rm -rf ./$CI_PROJECT_NAME
+
+deploy_prod_mainland:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  tags:
+    - rth-bird
+  script:
+    - cd $DEPLOY_DIR
+    - ./update.sh $CI_PROJECT_NAME
+  only:
+    - main
+
+deploy_prod_overseas:
+  stage: deploy
+  tags:
+    - rth-timmy
+  script:
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+  only:
+    - main
