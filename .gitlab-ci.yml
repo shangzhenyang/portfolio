@@ -1,0 +1,42 @@
+stages:
+  - test
+  - mirror
+  - deploy
+
+test:
+  stage: test
+  tags:
+    - rth-timmy
+  script:
+    - npm install
+    - npm run build
+    - npm run lint
+
+mirror_github:
+  stage: mirror
+  tags:
+    - rth-timmy
+  script:
+    - git remote add github git@github.com:shangzhenyang/portfolio.git
+    - git push --mirror github
+
+deploy_prod_mainland:
+  stage: deploy
+  tags:
+    - rth-bird
+  script:
+    - cd $DEPLOY_DIR
+    - ./update.sh portfolio
+  only:
+    - master
+
+deploy_prod_overseas:
+  stage: deploy
+  tags:
+    - rth-timmy
+  script:
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+  only:
+    - master
