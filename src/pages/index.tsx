@@ -10,7 +10,6 @@ import { useEffect } from "react";
 import ReactGA from "react-ga4";
 
 function Home(): JSX.Element {
-	const BAIDU_STAT = "https://hm.baidu.com";
 	const FAVICON = "/images/avatar.png";
 
 	const csp = {
@@ -19,6 +18,7 @@ function Home(): JSX.Element {
 		],
 		"connect-src": [
 			"'self'",
+			"https://collect-v6.51.la",
 			"https://*.google-analytics.com",
 			"https://*.analytics.google.com",
 			"https://*.googletagmanager.com",
@@ -38,6 +38,7 @@ function Home(): JSX.Element {
 		],
 		"script-src": [
 			"'self'",
+			"https://sdk.51.la",
 			"https://www.googletagmanager.com",
 		],
 		"style-src": [
@@ -45,10 +46,6 @@ function Home(): JSX.Element {
 			"'unsafe-inline'",
 		],
 	};
-	if (isChinaSite) {
-		csp["img-src"].push(BAIDU_STAT);
-		csp["script-src"].push(BAIDU_STAT);
-	}
 	if (process.env.NODE_ENV === "development") {
 		csp["script-src"].push("'unsafe-eval'");
 	}
@@ -59,10 +56,18 @@ function Home(): JSX.Element {
 	useEffect(() => {
 		setTimeout(() => {
 			if (isChinaSite) {
-				const hm = document.createElement("script");
-				hm.async = true;
-				hm.src = BAIDU_STAT + "/hm.js?d80574fac90c818f3df7d0b7d1d75419";
-				document.body.appendChild(hm);
+				const stat = document.createElement("script");
+				stat.async = true;
+				stat.id = "LA_COLLECT";
+				stat.src = "https://sdk.51.la/js-sdk-pro.min.js";
+				stat.setAttribute("charset", "UTF-8");
+				stat.onload = (): void => {
+					LA.init({
+						ck: "3H10uEy6rm6oGBgB",
+						id: "3H10uEy6rm6oGBgB",
+					});
+				};
+				document.body.appendChild(stat);
 			} else {
 				ReactGA.initialize("G-DKZ5ZLG4FT");
 				ReactGA.send("pageview");
