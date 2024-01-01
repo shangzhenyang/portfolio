@@ -33,6 +33,7 @@
 		"eslint-plugin-jsx-a11y": "^6.8.0",
 		"eslint-plugin-no-relative-import-paths": "^1.5.3",
 		"next-image-export-optimizer": "^1.11.0",
+		"sharp": "^0.33.1",
 		"typescript": "^5.3.3"
 	}
 }
