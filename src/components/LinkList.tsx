@@ -9,7 +9,7 @@ import uwIcon from "@/images/uw.jpg";
 import styles from "@/styles/LinkList.module.css";
 import { ListItem } from "@/types";
 import classNames from "classnames";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 
 interface Group {
 	title: string;
@@ -18,8 +18,6 @@ interface Group {
 }
 
 function LinkList(): JSX.Element {
-	const [isTencent, setIsTencent] = useState<boolean>(false);
-
 	const groups: Group[] = [
 		{
 			items: [
@@ -226,7 +224,7 @@ function LinkList(): JSX.Element {
 						"React",
 					],
 					title: "Unofficial ChatGPT Client",
-					when: !isChinaSite && !isTencent,
+					when: !isChinaSite,
 				},
 				{
 					icon: uwIcon.src,
@@ -286,12 +284,6 @@ function LinkList(): JSX.Element {
 			</a>
 		);
 	});
-
-	useEffect(() => {
-		setIsTencent(navigator.userAgent.includes("MicroMessenger") ||
-			navigator.userAgent.includes("QQ") ||
-			navigator.userAgent.includes("SE 2.X MetaSr 1.0"));
-	}, []);
 
 	return (
 		<div className={styles["link-list"]}>

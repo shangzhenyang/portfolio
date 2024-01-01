@@ -1,3 +1,5 @@
+"use client";
+
 import { isChinaSite, t } from "@/i18n";
 import avatar from "@/images/avatar-transparent.png";
 import styles from "@/styles/Profile.module.css";
