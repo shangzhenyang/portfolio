@@ -79,7 +79,7 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
 					httpEquiv="Content-Security-Policy"
 					content={cspString}
 				/>
-				{isChinaSite && <base target="_blank" />}
+				<base target="_blank" />
 				<link
 					rel="alternate"
 					hrefLang="en-US"
