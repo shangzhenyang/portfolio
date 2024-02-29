@@ -67,7 +67,7 @@ function LinkList(): JSX.Element {
 				},
 				{
 					description: t("webHostingDescription"),
-					icon: "https://assets.retiehe.com/host-icon-512.png",
+					icon: "https://assets.retiehe.com/host-icon-512-2.png",
 					link: "https://host.retiehe.com/",
 					tags: [
 						"TypeScript",
