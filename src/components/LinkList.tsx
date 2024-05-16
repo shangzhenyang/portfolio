@@ -275,6 +275,7 @@ function LinkList(): JSX.Element {
 					tags: [
 						"TypeScript",
 						"React",
+						"Cloudflare Workers",
 					],
 					title: "AI Chat",
 					when: !isChinaSite,
