@@ -1,70 +1,28 @@
-import { isChinaSite } from "@/i18n";
-import styles from "@/styles/ListGroup.module.css";
-import { ListItem } from "@/types";
-import classNames from "classnames";
-import ExportedImage from "next-image-export-optimizer";
-import { Fragment } from "react";
+import ListItem from "@/components/ListItem";
+import { ListItemInfo } from "@/types";
 
 interface ListGroupProps {
 	className: string;
-	items: ListItem[];
+	items: ListItemInfo[];
 	title: string;
 }
 
 function ListGroup({ className, items, title }: ListGroupProps): JSX.Element {
 	const itemElements = items.map((item) => {
-		if (!item.when) {
-			return <Fragment key={item.title}></Fragment>;
-		}
-		const tagElements = item.tags.map((tag) => {
-			return <span key={tag}>{tag}</span>;
-		});
 		return (
-			<div key={item.title}>
-				<a
-					className={className}
-					href={item.link}
-					rel="noopener"
-				>
-					{item.icon &&
-						<ExportedImage
-							className={styles["icon"]}
-							src={item.icon}
-							alt=""
-							width={35}
-							height={35}
-							draggable={false}
-							unoptimized={true}
-							placeholder="empty"
-						/>
-					}
-					<div>
-						{item.title}
-						{item.description &&
-							<div className={styles["description"]}>
-								{item.description}
-							</div>
-						}
-					</div>
-				</a>
-				{item.extra}
-				{!isChinaSite && item.tags.length > 0 &&
-					<div
-						className={classNames(
-							styles["description"],
-							styles["tags"],
-						)}
-					>
-						{tagElements}
-					</div>
-				}
-			</div>
+			<ListItem
+				className={className}
+				item={item}
+				key={item.title}
+			/>
 		);
 	});
 
 	return (
-		<fieldset className={styles["group"]}>
-			<legend className={styles["title"]}>{title}</legend>
+		<fieldset className="border-solid border-y-white/10 border-b border-t p-2">
+			<legend className="border text-white leading-tight mx-auto my-0 px-4 py-1 rounded border-solid border-white/10">
+				{title}
+			</legend>
 			{itemElements}
 		</fieldset>
 	);

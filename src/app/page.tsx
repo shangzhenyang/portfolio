@@ -1,24 +1,25 @@
 import LinkList from "@/components/LinkList";
 import Profile from "@/components/Profile";
-import bgImg from "@/images/reichenbach-falls.jpg";
-import styles from "@/styles/Home.module.css";
 import classNames from "classnames";
 import ExportedImage from "next-image-export-optimizer";
 
 function Page(): JSX.Element {
+	const backgroundStyles = "h-full fixed w-full z-[-1] left-0 top-0";
+
 	return (
 		<>
 			<ExportedImage
-				className={classNames(styles["bg"], styles["bg-img"])}
-				src={bgImg}
 				alt=""
+				className={classNames(backgroundStyles, "block object-cover blur-md scale-110")}
 				height={1080}
-				width={1920}
 				placeholder="empty"
 				priority={true}
+				src="https://th.bing.com/th?id=OHR.ReichenbachFalls_EN-US9352987746_1920x1080.jpg"
+				unoptimized={true}
+				width={1920}
 			/>
-			<div className={classNames(styles["bg"], styles["bg-cover"])}></div>
-			<div className={styles["root"]}>
+			<div className={classNames(backgroundStyles, "bg-dark-blue/70 md:bg-transparent md:bg-wallpaper-gradient")}></div>
+			<div className="flex flex-col md:flex-row h-full overflow-auto transition-opacity duration-200">
 				<Profile />
 				<LinkList />
 			</div>

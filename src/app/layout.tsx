@@ -1,6 +1,6 @@
 import Analytics from "@/components/Analytics";
+import "@/globals.css";
 import { isChinaSite, t } from "@/i18n";
-import "@/styles/globals.css";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 
@@ -39,7 +39,10 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
 		"img-src": [
 			"'self'",
 			"https://assets.retiehe.com",
+			"https://cdn.idealclover.cn",
 			"https://developer.apple.com",
+			"https://maorx.cn",
+			"https://th.bing.com",
 		],
 		"script-src": [
 			"'self'",

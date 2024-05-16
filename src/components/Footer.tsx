@@ -1,9 +1,8 @@
 import { isChinaSite, t } from "@/i18n";
-import styles from "@/styles/Footer.module.css";
 
 function Footer(): JSX.Element {
 	return (
-		<footer className={styles["footer"]}>
+		<footer className="bg-black/30 text-sm leading-loose mt-auto pt-3.5 pb-4 px-6">
 			<div>
 				&copy; {new Date().getFullYear()}{" "}{t("shangzhenYang")}
 			</div>
@@ -13,12 +12,6 @@ function Footer(): JSX.Element {
 						闽ICP备18016273号-6
 					</a>
 				</div>
-			}
-			{!isChinaSite &&
-				<>
-					<div>Apple and the Apple Logo are registered trademarks of Apple Inc.</div>
-					<div>Google Play and the Google Play logo are trademarks of Google LLC.</div>
-				</>
 			}
 		</footer>
 	);

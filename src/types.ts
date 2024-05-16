@@ -1,4 +1,4 @@
-export interface ListItem {
+export interface ListItemInfo {
 	description?: string;
 	extra?: JSX.Element;
 	icon?: string;

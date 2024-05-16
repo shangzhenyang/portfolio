@@ -1,23 +1,26 @@
 import DownloadBar from "@/components/DownloadBar";
 import Footer from "@/components/Footer";
 import ListGroup from "@/components/ListGroup";
+import ListItem from "@/components/ListItem";
 import { isChinaSite, t } from "@/i18n";
 import aiChatIcon from "@/images/ai-chat.png";
 import devmatchIcon from "@/images/devmatch.png";
 import uwClassmateIcon from "@/images/uw-classmate.png";
 import uwIcon from "@/images/uw.jpg";
-import styles from "@/styles/LinkList.module.css";
-import { ListItem } from "@/types";
+import { ListItemInfo } from "@/types";
 import classNames from "classnames";
 import { Fragment } from "react";
 
 interface Group {
 	title: string;
-	items: ListItem[];
+	items: ListItemInfo[];
 	when: boolean;
 }
 
 function LinkList(): JSX.Element {
+	const listItemStyles = "items-center cursor-default flex gap-4 leading-normal transition-colors duration-200 focus:bg-white/10 hover:bg-white/10 active:bg-white/5";
+	const titleStyles = "bg-black/20 border cursor-default block leading-6 transition-colors duration-200 px-6 py-2.5 border-dotted border-transparent outline-none focus:border-white/20";
+
 	const groups: Group[] = [
 		{
 			items: [
@@ -37,6 +40,8 @@ function LinkList(): JSX.Element {
 						"React",
 						"Electron",
 						"Swift (iOS)",
+						"Kotlin (Android)",
+						"Jetpack Compose",
 						"PHP",
 						"SQL",
 						"Cybersecurity",
@@ -45,6 +50,7 @@ function LinkList(): JSX.Element {
 						"S3",
 						"WebSocket",
 						"RSA Encryption",
+						"Cypress",
 					],
 					title: t("airportal"),
 					when: true,
@@ -93,68 +99,9 @@ function LinkList(): JSX.Element {
 		{
 			items: [
 				{
-					description: t("encoderDescription"),
-					link: "https://encoder.shangzhenyang.com/",
-					tags: [
-						"TypeScript",
-						"React",
-						"PWA",
-					],
-					title: t("encoder"),
-					when: true,
-				},
-				{
-					description: t("randomNumberDescription"),
-					link: "https://random.shangzhenyang.com/",
-					tags: [
-						"TypeScript",
-						"Vue",
-						"PWA",
-					],
-					title: t("randomNumber"),
-					when: true,
-				},
-				{
-					description: t("calculatorDescription"),
-					link: "https://calc.shangzhenyang.com/",
-					tags: [
-						"TypeScript",
-						"React",
-						"PWA",
-					],
-					title: t("calculator"),
-					when: true,
-				},
-				{
-					description: t("periodicTableDescription"),
-					link: "https://github.com/shangzhenyang/periodic-table",
-					tags: [
-						"TypeScript",
-						"NPM Package",
-					],
-					title: t("periodicTable"),
-					when: true,
-				},
-				{
-					description: t("bingWallpaperApiDescription"),
-					link: "https://github.com/shangzhenyang/bing-wallpaper",
-					tags: [
-						"TypeScript",
-						"Serverless",
-					],
-					title: t("bingWallpaperApi"),
-					when: true,
-				},
-			],
-			title: t("openSourcedProjects"),
-			when: true,
-		},
-		{
-			items: [
-				{
 					description: "A coding assessment platform for hiring software engineers.",
 					icon: devmatchIcon.src,
-					link: "https://app.devmatch.io/",
+					link: "https://www.devmatch.io/",
 					tags: [
 						"TypeScript",
 						"Angular",
@@ -187,6 +134,117 @@ function LinkList(): JSX.Element {
 		{
 			items: [
 				{
+					description: t("encoderDescription"),
+					link: "https://encoder.shangzhenyang.com/",
+					tags: [
+						"TypeScript",
+						"React",
+						"Tailwind CSS",
+						"PWA",
+					],
+					title: t("encoder"),
+					when: true,
+				},
+				{
+					description: t("randomNumberDescription"),
+					link: "https://random.shangzhenyang.com/",
+					tags: [
+						"TypeScript",
+						"Vue",
+						"PWA",
+					],
+					title: t("randomNumber"),
+					when: true,
+				},
+				{
+					description: t("calculatorDescription"),
+					link: "https://calc.shangzhenyang.com/",
+					tags: [
+						"TypeScript",
+						"React",
+						"PWA",
+					],
+					title: t("calculator"),
+					when: true,
+				},
+				{
+					description: t("marqueeDescription"),
+					link: "https://marquee.shangzhenyang.com/",
+					tags: [
+						"TypeScript",
+						"React",
+						"Tailwind CSS",
+						"PWA",
+					],
+					title: t("marquee"),
+					when: true,
+				},
+				{
+					description: t("uwCampusPathsDescription"),
+					icon: uwIcon.src,
+					link: "https://paths.shangzhenyang.com/",
+					tags: [
+						"TypeScript",
+						"React",
+						"Dijkstra's",
+					],
+					title: t("uwCampusPaths"),
+					when: true,
+				},
+			],
+			title: t("frontEndOnlyProjects"),
+			when: true,
+		},
+		{
+			items: [
+				{
+					description: t("lanScanDescription"),
+					link: "https://www.npmjs.com/package/lan-scan",
+					tags: [
+						"TypeScript",
+						"Node.js",
+					],
+					title: t("lanScan"),
+					when: true,
+				},
+				{
+					description: t("dateShiftDescription"),
+					link: "https://www.npmjs.com/package/date-shift",
+					tags: [
+						"TypeScript",
+						"Jest",
+					],
+					title: t("dateShift"),
+					when: true,
+				},
+				{
+					description: t("upyunUploaderDescription"),
+					link: "https://www.npmjs.com/package/@shangzhen/upyun-uploader",
+					tags: [
+						"TypeScript",
+						"Node.js",
+						"CI/CD",
+						"CLI",
+					],
+					title: t("upyunUploader"),
+					when: true,
+				},
+				{
+					description: t("periodicTableDescription"),
+					link: "https://www.npmjs.com/package/@shangzhen/periodic-table",
+					tags: [
+						"TypeScript",
+					],
+					title: t("periodicTable"),
+					when: true,
+				},
+			],
+			title: t("npmProjects"),
+			when: true,
+		},
+		{
+			items: [
+				{
 					link: "https://tool.retiehe.com/wordlist",
 					tags: [],
 					title: t("wordList"),
@@ -196,12 +254,6 @@ function LinkList(): JSX.Element {
 					link: "https://tool.retiehe.com/timer",
 					tags: [],
 					title: t("timer"),
-					when: true,
-				},
-				{
-					link: "https://tool.retiehe.com/marquee",
-					tags: [],
-					title: t("marquee"),
 					when: true,
 				},
 				{
@@ -217,24 +269,24 @@ function LinkList(): JSX.Element {
 		{
 			items: [
 				{
+					description: "An unofficial ChatGPT client.",
 					icon: aiChatIcon.src,
 					link: "https://www.ai-chat.dev/",
 					tags: [
 						"TypeScript",
 						"React",
 					],
-					title: "Unofficial ChatGPT Client",
+					title: "AI Chat",
 					when: !isChinaSite,
 				},
 				{
-					icon: uwIcon.src,
-					link: "https://paths.shangzhenyang.com/",
+					description: t("bingWallpaperApiDescription"),
+					link: "https://github.com/shangzhenyang/bing-wallpaper",
 					tags: [
 						"TypeScript",
-						"React",
-						"Dijkstra's",
+						"Serverless",
 					],
-					title: t("uwCampusPaths"),
+					title: t("bingWallpaperApi"),
 					when: true,
 				},
 			],
@@ -249,7 +301,7 @@ function LinkList(): JSX.Element {
 		}
 		return (
 			<ListGroup
-				className={classNames(styles["list-item"], styles["in-group"])}
+				className={classNames(listItemStyles, "bg-transparent px-5 py-2.5 rounded")}
 				key={group.title}
 				items={group.items}
 				title={group.title}
@@ -259,37 +311,42 @@ function LinkList(): JSX.Element {
 
 	const friends = [
 		{
+			icon: "https://maorx.cn/images/apple-touch-icon-maorx.png",
 			link: "https://maorx.cn/",
+			tags: [],
 			title: "毛若昕",
+			when: true,
 		},
 		{
 			link: "https://blankwings.com/",
+			tags: [],
 			title: "空白的羽翼",
+			when: true,
 		},
 		{
+			icon: "https://cdn.idealclover.cn/Projects/homepage/apple-touch-icon.png",
 			link: "https://idealclover.top/",
+			tags: [],
 			title: "Idealclover",
+			when: true,
 		},
 	];
 
-	const friendElements = friends.map(({ link, title }) => {
+	const friendElements = friends.map((item) => {
 		return (
-			<a
-				className={styles["list-item"]}
-				href={link}
-				key={title}
-				rel="noopener"
-			>
-				{title}
-			</a>
+			<ListItem
+				className={classNames(listItemStyles, "bg-black/10 px-7 py-2.5")}
+				item={item}
+				key={item.title}
+			/>
 		);
 	});
 
 	return (
-		<div className={styles["link-list"]}>
-			<div id="works" className={styles["groups"]}>
+		<div className={"flex flex-col grow-0 shrink-0 basis-[400px] gap-5 h-screen md:overflow-x-hidden md:overflow-y-auto"}>
+			<div id="works" className="flex flex-col gap-5 md:w-[400px]">
 				<a
-					className={styles["title"]}
+					className={titleStyles}
 					href="#works"
 					target="_self"
 				>
@@ -300,7 +357,7 @@ function LinkList(): JSX.Element {
 			{isChinaSite &&
 				<div id="friends">
 					<a
-						className={styles["title"]}
+						className={titleStyles}
 						href="#friends"
 						target="_self"
 					>

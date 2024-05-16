@@ -2,7 +2,6 @@
 
 import { isChinaSite, t } from "@/i18n";
 import avatar from "@/images/avatar-transparent.png";
-import styles from "@/styles/Profile.module.css";
 import {
 	faBilibili,
 	faGithub,
@@ -13,6 +12,8 @@ import ExportedImage from "next-image-export-optimizer";
 import { useEffect, useState } from "react";
 
 function Profile(): JSX.Element {
+	const buttonStyles = "items-center bg-white/10 border font-inherit text-inherit cursor-default flex gap-1 justify-center transition-colors duration-200 w-[300px] px-5 py-2 rounded-lg border-solid border-white/20 focus:bg-white/20 hover:bg-white/20 hover:shadow active:bg-white/15";
+
 	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinaSite);
 
 	const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
@@ -24,26 +25,28 @@ function Profile(): JSX.Element {
 	}, [timeZone]);
 
 	return (
-		<main className={styles["profile"]}>
-			<div>
+		<main className="items-center flex grow-0 shrink-0 basis-[calc(100%-46px)] flex-col justify-center overflow-auto text-center md:shadow-[0_0_5px_black] md:flex-1 md:w-[calc(100%-400px)]">
+			<div className="w-full">
 				<ExportedImage
-					className={styles["avatar"]}
+					className="border block mx-auto my-0 rounded-full border-solid border-white/20 md:h-[150px] md:w-[150px]"
 					src={avatar}
 					alt="Avatar"
-					height={150}
-					width={150}
+					height={100}
+					width={100}
 					draggable={false}
 					placeholder="empty"
 					priority={true}
 				/>
-				<h1 className={styles["title"]}>{t("shangzhenYang")}</h1>
-				<div className={styles["description"]}>
+				<h1 className="text-2xl mt-5 mb-2.5 mx-0">
+					{t("shangzhenYang")}
+				</h1>
+				<div className="leading-6 mt-2.5 mb-7 mx-4">
 					{isChinaSite &&
 						<>
 							<div>现就读于华盛顿大学计算机系</div>
 							<div>
 								<a
-									className={styles["link"]}
+									className="transition-opacity duration-200 border-b border-solid hover:opacity-80 active:opacity-60"
 									href="https://www.retiehe.com/"
 									rel="noopener"
 								>
@@ -61,29 +64,29 @@ function Profile(): JSX.Element {
 					}
 				</div>
 			</div>
-			<div>
+			<div className="flex flex-col gap-2 mx-auto">
 				<a
-					className={styles["btn"]}
+					className={buttonStyles}
 					href="https://github.com/shangzhenyang"
 				>
-					<FontAwesomeIcon icon={faGithub} />
+					<FontAwesomeIcon className="h-4" icon={faGithub} />
 					GitHub
 				</a>
 				{!isChinaUser &&
 					<a
-						className={styles["btn"]}
+						className={buttonStyles}
 						href="https://www.linkedin.com/in/shangzhenyang/"
 					>
-						<FontAwesomeIcon icon={faLinkedin} />
+						<FontAwesomeIcon className="h-4" icon={faLinkedin} />
 						LinkedIn
 					</a>
 				}
 				{isChinaUser &&
 					<a
-						className={styles["btn"]}
+						className={buttonStyles}
 						href="https://space.bilibili.com/5931839"
 					>
-						<FontAwesomeIcon icon={faBilibili} />
+						<FontAwesomeIcon className="h-4" icon={faBilibili} />
 						{t("bilibili")}
 					</a>
 				}

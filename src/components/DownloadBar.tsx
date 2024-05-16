@@ -1,5 +1,4 @@
 import googlePlayBadge from "@/images/google-play.png";
-import styles from "@/styles/DownloadBar.module.css";
 import ExportedImage from "next-image-export-optimizer";
 
 interface DownloadBarProps {
@@ -13,27 +12,39 @@ function DownloadBar({
 	appStoreLink,
 	googlePlayLink,
 }: DownloadBarProps): JSX.Element {
+	const linkStyles = "outline-none transition-transform hover:scale-105 active:scale-100";
+
 	return (
-		<div className={styles["download-bar"]}>
-			<a href={appStoreLink}>
+		<div className="flex items-center px-5">
+			<a
+				aria-label={`Download ${appName} App for iOS`}
+				className={linkStyles}
+				href={appStoreLink}
+				title="Apple and the Apple Logo are registered trademarks of Apple Inc."
+			>
 				<ExportedImage
-					src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-					alt={"Download " + appName + " on the App Store"}
-					height={41}
-					width={123}
+					alt={`Download ${appName} on the App Store`}
 					draggable={false}
-					unoptimized={true}
+					height={41}
 					placeholder="empty"
+					src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+					unoptimized={true}
+					width={123}
 				/>
 			</a>
-			<a href={googlePlayLink}>
+			<a
+				aria-label={`Download ${appName} App for Android`}
+				className={linkStyles}
+				href={googlePlayLink}
+				title="Google Play and the Google Play logo are trademarks of Google LLC."
+			>
 				<ExportedImage
-					src={googlePlayBadge.src}
-					alt={"Get " + appName + " on Google Play"}
-					height={60}
-					width={155}
+					alt={`Get ${appName} on Google Play`}
 					draggable={false}
+					height={60}
 					placeholder="empty"
+					src={googlePlayBadge.src}
+					width={155}
 				/>
 			</a>
 		</div>
