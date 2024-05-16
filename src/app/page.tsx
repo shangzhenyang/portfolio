@@ -14,7 +14,7 @@ function Page(): JSX.Element {
 				height={1080}
 				placeholder="empty"
 				priority={true}
-				src="https://th.bing.com/th?id=OHR.ReichenbachFalls_EN-US9352987746_1920x1080.jpg"
+				src="https://www.bing.com/th?id=OHR.ReichenbachFalls_EN-US9352987746_1920x1080.jpg"
 				unoptimized={true}
 				width={1920}
 			/>

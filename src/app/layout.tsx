@@ -42,7 +42,7 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
 			"https://cdn.idealclover.cn",
 			"https://developer.apple.com",
 			"https://maorx.cn",
-			"https://th.bing.com",
+			"https://www.bing.com",
 		],
 		"script-src": [
 			"'self'",
