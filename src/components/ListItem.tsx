@@ -42,7 +42,7 @@ function ListItem({ className, item }: ListItemProps): JSX.Element {
 					/> :
 					<div
 						aria-hidden={true}
-						className={classNames(iconStyles, "items-center bg-icon-gradient text-white/80 font-cursive flex text-lg justify-center h-9 w-9")}
+						className={classNames(iconStyles, "items-center bg-icon-gradient text-white/80 flex text-lg justify-center h-9 w-9")}
 						role="img"
 					>
 						{item.title[0]}

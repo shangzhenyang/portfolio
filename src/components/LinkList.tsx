@@ -93,7 +93,7 @@ function LinkList(): JSX.Element {
 					when: true,
 				},
 			],
-			title: t("mainProjects"),
+			title: t("mainFullStackProjects"),
 			when: true,
 		},
 		{

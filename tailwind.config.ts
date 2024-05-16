@@ -14,9 +14,6 @@ export default {
 			colors: {
 				"dark-blue": "rgb(24, 37, 77)",
 			},
-			fontFamily: {
-				"cursive": ["cursive"],
-			},
 		},
 	},
 } as Config;

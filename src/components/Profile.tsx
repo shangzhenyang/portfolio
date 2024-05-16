@@ -12,7 +12,7 @@ import ExportedImage from "next-image-export-optimizer";
 import { useEffect, useState } from "react";
 
 function Profile(): JSX.Element {
-	const buttonStyles = "items-center bg-white/10 border font-inherit text-inherit cursor-default flex gap-1 justify-center transition-colors duration-200 w-[300px] px-5 py-2 rounded-lg border-solid border-white/20 focus:bg-white/20 hover:bg-white/20 hover:shadow active:bg-white/15";
+	const buttonStyles = "items-center bg-white/10 border cursor-default flex gap-1 justify-center transition-colors duration-200 w-[300px] px-5 py-2 rounded-lg border-solid border-white/20 focus:bg-white/20 hover:bg-white/20 hover:shadow active:bg-white/15";
 
 	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinaSite);
 
