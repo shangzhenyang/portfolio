@@ -3,6 +3,7 @@
 import OpenToWorkBadge from "@/components/OpenToWorkBadge";
 import { isChinaSite, t } from "@/i18n";
 import avatar from "@/images/avatar-transparent.png";
+import { config as fontAwesomeConfig } from "@fortawesome/fontawesome-svg-core";
 import {
 	faBilibili,
 	faGithub,
@@ -12,6 +13,8 @@ import { faEnvelope, faGraduationCap, faLaptopCode } from "@fortawesome/free-sol
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ExportedImage from "next-image-export-optimizer";
 import { useEffect, useState } from "react";
+
+fontAwesomeConfig.autoAddCss = false;
 
 function Profile(): JSX.Element {
 	const buttonStyles = "items-center bg-white/10 border cursor-default flex gap-1 justify-center transition-colors duration-200 w-[300px] px-5 py-2 rounded-lg border-solid border-white/20 focus:bg-white/20 hover:bg-white/20 hover:shadow active:bg-white/15";

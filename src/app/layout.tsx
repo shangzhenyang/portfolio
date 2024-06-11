@@ -1,14 +1,11 @@
 import Analytics from "@/components/Analytics";
 import "@/globals.css";
 import { isChinaSite, t } from "@/i18n";
-import { config as fontAwesomeConfig } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 
 const FAVICON = "/images/avatar.png";
-
-fontAwesomeConfig.autoAddCss = false;
 
 export const metadata: Metadata = {
 	authors: {
