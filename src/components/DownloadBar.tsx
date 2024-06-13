@@ -12,7 +12,8 @@ function DownloadBar({
 	appStoreLink,
 	googlePlayLink,
 }: DownloadBarProps): JSX.Element {
-	const linkStyles = "outline-none transition-transform focus:scale-105 hover:scale-105 active:scale-100";
+	const linkStyles =
+		"outline-none transition-transform focus:scale-105 hover:scale-105 active:scale-100";
 
 	return (
 		<div className="flex items-center px-5">

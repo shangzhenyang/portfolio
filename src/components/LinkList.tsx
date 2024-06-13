@@ -18,8 +18,10 @@ interface Group {
 }
 
 function LinkList(): JSX.Element {
-	const listItemStyles = "items-center cursor-default flex gap-4 leading-normal transition-colors duration-200 focus:bg-white/10 hover:bg-white/10 active:bg-white/5";
-	const titleStyles = "bg-black/20 border cursor-default block leading-6 transition-colors duration-200 px-6 py-2.5 border-dotted border-transparent outline-none focus:border-white/20";
+	const listItemStyles =
+		"items-center cursor-default flex gap-4 leading-normal transition-colors duration-200 focus:bg-white/10 hover:bg-white/10 active:bg-white/5";
+	const titleStyles =
+		"bg-black/20 border cursor-default block leading-6 transition-colors duration-200 px-6 py-2.5 border-dotted border-transparent outline-none focus:border-white/20";
 
 	const groups: Group[] = [
 		{
@@ -99,7 +101,8 @@ function LinkList(): JSX.Element {
 		{
 			items: [
 				{
-					description: "A coding assessment platform for hiring software engineers.",
+					description:
+						"A coding assessment platform for hiring software engineers.",
 					icon: devmatchIcon.src,
 					link: "https://www.devmatch.io/",
 					tags: [
@@ -115,15 +118,11 @@ function LinkList(): JSX.Element {
 					when: true,
 				},
 				{
-					description: "A course commenting website for students at University of Washington.",
+					description:
+						"A course commenting website for students at University of Washington.",
 					icon: uwClassmateIcon.src,
 					link: "https://uwclassmate.com/",
-					tags: [
-						"JavaScript",
-						"React",
-						"Node.js",
-						"SQL",
-					],
+					tags: ["JavaScript", "React", "Node.js", "SQL"],
 					title: "Hua Classmate",
 					when: true,
 				},
@@ -136,46 +135,28 @@ function LinkList(): JSX.Element {
 				{
 					description: t("encoderDescription"),
 					link: "https://encoder.shangzhenyang.com/",
-					tags: [
-						"TypeScript",
-						"React",
-						"Tailwind CSS",
-						"PWA",
-					],
+					tags: ["TypeScript", "React", "Tailwind CSS", "PWA"],
 					title: t("encoder"),
 					when: true,
 				},
 				{
 					description: t("randomNumberDescription"),
 					link: "https://random.shangzhenyang.com/",
-					tags: [
-						"TypeScript",
-						"Vue",
-						"PWA",
-					],
+					tags: ["TypeScript", "Vue", "PWA"],
 					title: t("randomNumber"),
 					when: true,
 				},
 				{
 					description: t("calculatorDescription"),
 					link: "https://calc.shangzhenyang.com/",
-					tags: [
-						"TypeScript",
-						"React",
-						"PWA",
-					],
+					tags: ["TypeScript", "React", "PWA"],
 					title: t("calculator"),
 					when: true,
 				},
 				{
 					description: t("marqueeDescription"),
 					link: "https://marquee.shangzhenyang.com/",
-					tags: [
-						"TypeScript",
-						"React",
-						"Tailwind CSS",
-						"PWA",
-					],
+					tags: ["TypeScript", "React", "Tailwind CSS", "PWA"],
 					title: t("marquee"),
 					when: true,
 				},
@@ -183,11 +164,7 @@ function LinkList(): JSX.Element {
 					description: t("uwCampusPathsDescription"),
 					icon: uwIcon.src,
 					link: "https://paths.shangzhenyang.com/",
-					tags: [
-						"TypeScript",
-						"React",
-						"Dijkstra's",
-					],
+					tags: ["TypeScript", "React", "Dijkstra's"],
 					title: t("uwCampusPaths"),
 					when: true,
 				},
@@ -200,41 +177,28 @@ function LinkList(): JSX.Element {
 				{
 					description: t("lanScanDescription"),
 					link: "https://www.npmjs.com/package/lan-scan",
-					tags: [
-						"TypeScript",
-						"Node.js",
-					],
+					tags: ["TypeScript", "Node.js"],
 					title: t("lanScan"),
 					when: true,
 				},
 				{
 					description: t("dateShiftDescription"),
 					link: "https://www.npmjs.com/package/date-shift",
-					tags: [
-						"TypeScript",
-						"Jest",
-					],
+					tags: ["TypeScript", "Jest"],
 					title: t("dateShift"),
 					when: true,
 				},
 				{
 					description: t("upyunUploaderDescription"),
 					link: "https://www.npmjs.com/package/@shangzhen/upyun-uploader",
-					tags: [
-						"TypeScript",
-						"Node.js",
-						"CI/CD",
-						"CLI",
-					],
+					tags: ["TypeScript", "Node.js", "CI/CD", "CLI"],
 					title: t("upyunUploader"),
 					when: true,
 				},
 				{
 					description: t("periodicTableDescription"),
 					link: "https://www.npmjs.com/package/@shangzhen/periodic-table",
-					tags: [
-						"TypeScript",
-					],
+					tags: ["TypeScript"],
 					title: t("periodicTable"),
 					when: true,
 				},
@@ -272,21 +236,14 @@ function LinkList(): JSX.Element {
 					description: "An unofficial ChatGPT client.",
 					icon: aiChatIcon.src,
 					link: "https://www.ai-chat.dev/",
-					tags: [
-						"TypeScript",
-						"React",
-						"Cloudflare Workers",
-					],
+					tags: ["TypeScript", "React", "Cloudflare Workers"],
 					title: "AI Chat",
 					when: !isChinaSite,
 				},
 				{
 					description: t("bingWallpaperApiDescription"),
 					link: "https://github.com/shangzhenyang/bing-wallpaper",
-					tags: [
-						"TypeScript",
-						"Serverless",
-					],
+					tags: ["TypeScript", "Serverless"],
 					title: t("bingWallpaperApi"),
 					when: true,
 				},
@@ -302,7 +259,10 @@ function LinkList(): JSX.Element {
 		}
 		return (
 			<ListGroup
-				className={classNames(listItemStyles, "bg-transparent px-5 py-2.5 rounded")}
+				className={classNames(
+					listItemStyles,
+					"bg-transparent px-5 py-2.5 rounded",
+				)}
 				key={group.title}
 				items={group.items}
 				title={group.title}
@@ -336,7 +296,10 @@ function LinkList(): JSX.Element {
 	const friendElements = friends.map((item) => {
 		return (
 			<ListItem
-				className={classNames(listItemStyles, "bg-black/10 px-7 py-2.5")}
+				className={classNames(
+					listItemStyles,
+					"bg-black/10 px-7 py-2.5",
+				)}
 				item={item}
 				key={item.title}
 			/>
@@ -344,8 +307,15 @@ function LinkList(): JSX.Element {
 	});
 
 	return (
-		<div className={"flex flex-col grow-0 shrink-0 basis-[400px] gap-5 h-screen md:overflow-x-hidden md:overflow-y-auto"}>
-			<div id="works" className="flex flex-col gap-5 md:w-[400px]">
+		<div
+			className={
+				"flex flex-col grow-0 shrink-0 basis-[400px] gap-5 h-screen md:overflow-x-hidden md:overflow-y-auto"
+			}
+		>
+			<div
+				id="works"
+				className="flex flex-col gap-5 md:w-[400px]"
+			>
 				<a
 					className={titleStyles}
 					href="#works"
@@ -355,7 +325,7 @@ function LinkList(): JSX.Element {
 				</a>
 				{groupElements}
 			</div>
-			{isChinaSite &&
+			{isChinaSite && (
 				<div id="friends">
 					<a
 						className={titleStyles}
@@ -366,7 +336,7 @@ function LinkList(): JSX.Element {
 					</a>
 					{friendElements}
 				</div>
-			}
+			)}
 			<Footer />
 		</div>
 	);

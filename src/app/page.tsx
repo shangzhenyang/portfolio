@@ -10,7 +10,10 @@ function Page(): JSX.Element {
 		<>
 			<ExportedImage
 				alt=""
-				className={classNames(backgroundStyles, "block object-cover blur-md scale-110")}
+				className={classNames(
+					backgroundStyles,
+					"block object-cover blur-md scale-110",
+				)}
 				height={1080}
 				placeholder="empty"
 				priority={true}
@@ -18,7 +21,12 @@ function Page(): JSX.Element {
 				unoptimized={true}
 				width={1920}
 			/>
-			<div className={classNames(backgroundStyles, "bg-dark-blue/70 md:bg-transparent md:bg-wallpaper-gradient")}></div>
+			<div
+				className={classNames(
+					backgroundStyles,
+					"bg-dark-blue/70 md:bg-transparent md:bg-wallpaper-gradient",
+				)}
+			></div>
 			<div className="flex flex-col md:flex-row h-full overflow-auto transition-opacity duration-200">
 				<Profile />
 				<LinkList />

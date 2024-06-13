@@ -9,7 +9,11 @@ import {
 	faGithub,
 	faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faGraduationCap, faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import {
+	faEnvelope,
+	faGraduationCap,
+	faLaptopCode,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ExportedImage from "next-image-export-optimizer";
 import { useEffect, useState } from "react";
@@ -17,7 +21,8 @@ import { useEffect, useState } from "react";
 fontAwesomeConfig.autoAddCss = false;
 
 function Profile(): JSX.Element {
-	const buttonStyles = "items-center bg-white/10 border cursor-default flex gap-1 justify-center transition-colors duration-200 w-[300px] px-5 py-2 rounded-lg border-solid border-white/20 focus:bg-white/20 hover:bg-white/20 hover:shadow active:bg-white/15";
+	const buttonStyles =
+		"items-center bg-white/10 border cursor-default flex gap-1 justify-center transition-colors duration-200 w-[300px] px-5 py-2 rounded-lg border-solid border-white/20 focus:bg-white/20 hover:bg-white/20 hover:shadow active:bg-white/15";
 
 	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinaSite);
 
@@ -46,7 +51,7 @@ function Profile(): JSX.Element {
 				<h1 className="text-2xl my-5 mx-0 text-center">
 					{t("shangzhenYang")}
 				</h1>
-				{isChinaSite &&
+				{isChinaSite && (
 					<div className="leading-7 mb-7 text-center">
 						<div>现就读于华盛顿大学计算机系</div>
 						<div>
@@ -60,50 +65,77 @@ function Profile(): JSX.Element {
 							首席执行官兼软件工程师
 						</div>
 					</div>
-				}
-				{!isChinaSite &&
+				)}
+				{!isChinaSite && (
 					<div className="leading-7 mb-7 mx-auto w-fit">
 						<div>
-							<FontAwesomeIcon className="mr-2" icon={faGraduationCap} fixedWidth />
+							<FontAwesomeIcon
+								className="mr-2"
+								icon={faGraduationCap}
+								fixedWidth
+							/>
 							CS Student at University of Washington
 						</div>
 						<div>
-							<FontAwesomeIcon className="mr-2" icon={faLaptopCode} fixedWidth />
+							<FontAwesomeIcon
+								className="mr-2"
+								icon={faLaptopCode}
+								fixedWidth
+							/>
 							Full-Stack Software Engineer
 						</div>
 						<div>
-							<FontAwesomeIcon className="mr-2" icon={faEnvelope} fixedWidth />
-							Email: <a className="underline" href="mailto:hello@shangzhenyang.com">hello@shangzhenyang.com</a>
+							<FontAwesomeIcon
+								className="mr-2"
+								icon={faEnvelope}
+								fixedWidth
+							/>
+							Email:{" "}
+							<a
+								className="underline"
+								href="mailto:hello@shangzhenyang.com"
+							>
+								hello@shangzhenyang.com
+							</a>
 						</div>
 					</div>
-				}
+				)}
 			</div>
 			<div className="flex flex-col gap-2 mx-auto">
 				<a
 					className={buttonStyles}
 					href="https://github.com/shangzhenyang"
 				>
-					<FontAwesomeIcon icon={faGithub} fixedWidth />
+					<FontAwesomeIcon
+						icon={faGithub}
+						fixedWidth
+					/>
 					GitHub
 				</a>
-				{!isChinaUser &&
+				{!isChinaUser && (
 					<a
 						className={buttonStyles}
 						href="https://www.linkedin.com/in/shangzhenyang/"
 					>
-						<FontAwesomeIcon icon={faLinkedin} fixedWidth />
+						<FontAwesomeIcon
+							icon={faLinkedin}
+							fixedWidth
+						/>
 						LinkedIn
 					</a>
-				}
-				{isChinaUser &&
+				)}
+				{isChinaUser && (
 					<a
 						className={buttonStyles}
 						href="https://space.bilibili.com/5931839"
 					>
-						<FontAwesomeIcon icon={faBilibili} fixedWidth />
+						<FontAwesomeIcon
+							icon={faBilibili}
+							fixedWidth
+						/>
 						{t("bilibili")}
 					</a>
-				}
+				)}
 			</div>
 		</main>
 	);

@@ -1,9 +1,3 @@
 {
-	"extends": [
-		"next/core-web-vitals",
-		"rth/react"
-	],
-	"rules": {
-		"max-len": "off"
-	}
+	"extends": ["next/core-web-vitals", "rth/react"]
 }

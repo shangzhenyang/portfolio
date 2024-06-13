@@ -25,18 +25,10 @@ interface RootLayoutProps {
 
 function RootLayout({ children }: RootLayoutProps): JSX.Element {
 	const csp = {
-		"base-uri": [
-			"'none'",
-		],
-		"connect-src": [
-			"'self'",
-		],
-		"default-src": [
-			"'none'",
-		],
-		"form-action": [
-			"'none'",
-		],
+		"base-uri": ["'none'"],
+		"connect-src": ["'self'"],
+		"default-src": ["'none'"],
+		"form-action": ["'none'"],
 		"img-src": [
 			"'self'",
 			"https://assets.retiehe.com",
@@ -45,14 +37,8 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
 			"https://maorx.cn",
 			"https://www.bing.com",
 		],
-		"script-src": [
-			"'self'",
-			"'unsafe-inline'",
-		],
-		"style-src": [
-			"'self'",
-			"'unsafe-inline'",
-		],
+		"script-src": ["'self'", "'unsafe-inline'"],
+		"style-src": ["'self'", "'unsafe-inline'"],
 	};
 	if (process.env.NODE_ENV === "development") {
 		csp["script-src"].push("'unsafe-eval'");
@@ -72,9 +58,11 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
 		);
 		csp["script-src"].push("https://www.googletagmanager.com");
 	}
-	const cspString = Object.entries(csp).map(([key, value]) => {
-		return key + " " + value.join(" ");
-	}).join("; ");
+	const cspString = Object.entries(csp)
+		.map(([key, value]) => {
+			return key + " " + value.join(" ");
+		})
+		.join("; ");
 
 	return (
 		<html lang={isChinaSite ? "zh-CN" : "en-US"}>
