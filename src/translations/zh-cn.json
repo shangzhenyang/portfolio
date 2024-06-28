@@ -27,14 +27,10 @@
 	"randomNumber": "随机抽号",
 	"randomNumberDescription": "可自定义的随机数生成器",
 	"shangzhenYang": "杨尚臻",
-	"textEditor": "文本编辑器",
-	"timer": "计时器",
-	"toolbox": "工具箱",
 	"upyunUploader": "又拍云上传器",
 	"upyunUploaderDescription": "流水线自动部署网站到又拍云存储",
 	"uwCampusPaths": "华大校园路径规划",
 	"uwCampusPathsDescription": "找到华大校园内两点之间的最短路径",
 	"webHosting": "网页托管",
-	"webHostingDescription": "面向初学者的开箱即用的网页托管服务",
-	"wordList": "单词表"
+	"webHostingDescription": "面向初学者的开箱即用的网页托管服务"
 }

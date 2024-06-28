@@ -27,14 +27,10 @@
 	"randomNumber": "Random Number",
 	"randomNumberDescription": "A customizable random number generator.",
 	"shangzhenYang": "Shangzhen Yang",
-	"textEditor": "Text Editor",
-	"timer": "Timer",
-	"toolbox": "Toolbox (Legacy)",
 	"upyunUploader": "UPYUN Uploader",
 	"upyunUploaderDescription": "CI/CD for UPYUN Storage Service.",
 	"uwCampusPaths": "UW Campus Paths",
 	"uwCampusPathsDescription": "Using Dijkstra's algorithm to find shortest paths between buildings.",
 	"webHosting": "Web Hosting",
-	"webHostingDescription": "An out-of-box web hosting service.",
-	"wordList": "Word List"
+	"webHostingDescription": "An out-of-box web hosting service."
 }

@@ -209,30 +209,6 @@ function LinkList(): JSX.Element {
 		{
 			items: [
 				{
-					link: "https://tool.retiehe.com/wordlist",
-					tags: [],
-					title: t("wordList"),
-					when: true,
-				},
-				{
-					link: "https://tool.retiehe.com/timer",
-					tags: [],
-					title: t("timer"),
-					when: true,
-				},
-				{
-					link: "https://tool.retiehe.com/texteditor",
-					tags: [],
-					title: t("textEditor"),
-					when: true,
-				},
-			],
-			title: t("toolbox"),
-			when: true,
-		},
-		{
-			items: [
-				{
 					description: "An unofficial ChatGPT client.",
 					icon: aiChatIcon.src,
 					link: "https://www.ai-chat.dev/",
