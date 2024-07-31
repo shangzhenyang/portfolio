@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 
+const BAIDU_STAT = "https://hm.baidu.com";
 const FAVICON = "/images/avatar.png";
 
 export const metadata: Metadata = {
@@ -44,8 +45,9 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
 		csp["script-src"].push("'unsafe-eval'");
 	}
 	if (isChinaSite) {
-		csp["connect-src"].push("https://collect-v6.51.la");
-		csp["script-src"].push("https://sdk.51.la");
+		csp["connect-src"].push(BAIDU_STAT);
+		csp["img-src"].push(BAIDU_STAT);
+		csp["script-src"].push(BAIDU_STAT);
 	} else {
 		csp["connect-src"].push(
 			"https://*.google-analytics.com",

@@ -10,15 +10,8 @@ function Analytics(): JSX.Element {
 			if (isChinaSite) {
 				const stat = document.createElement("script");
 				stat.async = true;
-				stat.id = "LA_COLLECT";
-				stat.src = "https://sdk.51.la/js-sdk-pro.min.js";
-				stat.setAttribute("charset", "UTF-8");
-				stat.onload = (): void => {
-					LA.init({
-						ck: "3H10uEy6rm6oGBgB",
-						id: "3H10uEy6rm6oGBgB",
-					});
-				};
+				stat.src =
+					"https://hm.baidu.com/hm.js?f3b968b3aa65f4adeb5425c7d1ed291c";
 				document.body.appendChild(stat);
 			} else {
 				ReactGA.initialize("G-DKZ5ZLG4FT");
