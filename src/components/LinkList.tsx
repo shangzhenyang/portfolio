@@ -60,7 +60,9 @@ function LinkList(): JSX.Element {
 				{
 					description: t("limeStartPageDescription"),
 					icon: "https://assets.retiehe.com/lime-apple-touch-icon.png",
-					link: "https://intro.limestart.cn/",
+					link: isChinaSite
+						? "https://intro.limestart.cn/"
+						: "https://intro.limestart.page/en/",
 					tags: [
 						"JavaScript",
 						"Vue",
