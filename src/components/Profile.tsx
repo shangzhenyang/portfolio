@@ -1,6 +1,5 @@
 "use client";
 
-import OpenToWorkBadge from "@/components/OpenToWorkBadge";
 import { isChinaSite, t } from "@/i18n";
 import avatar from "@/images/avatar-transparent.png";
 import { config as fontAwesomeConfig } from "@fortawesome/fontawesome-svg-core";
@@ -47,7 +46,6 @@ function Profile(): JSX.Element {
 					placeholder="empty"
 					priority={true}
 				/>
-				{!isChinaSite && <OpenToWorkBadge />}
 				<h1 className="text-2xl my-5 mx-0 text-center">
 					{t("shangzhenYang")}
 				</h1>
@@ -62,7 +60,7 @@ function Profile(): JSX.Element {
 							>
 								热铁盒
 							</a>
-							首席执行官兼软件工程师
+							创始人兼软件工程师
 						</div>
 					</div>
 				)}
