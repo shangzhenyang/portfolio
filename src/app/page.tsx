@@ -1,11 +1,11 @@
 import LinkList from "@/components/LinkList";
 import Profile from "@/components/Profile";
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 
 function Page(): JSX.Element {
 	return (
 		<>
-			<ExportedImage
+			<Image
 				alt=""
 				className="wallpaper wallpaper-image"
 				height={1080}

@@ -1,5 +1,5 @@
 import googlePlayBadge from "@/images/google-play.png";
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 
 interface DownloadBarProps {
 	appName: string;
@@ -19,7 +19,7 @@ function DownloadBar({
 				href={appStoreLink}
 				title="Apple and the Apple Logo are registered trademarks of Apple Inc."
 			>
-				<ExportedImage
+				<Image
 					alt={`Download ${appName} on the App Store`}
 					draggable={false}
 					height={41}
@@ -34,12 +34,13 @@ function DownloadBar({
 				href={googlePlayLink}
 				title="Google Play and the Google Play logo are trademarks of Google LLC."
 			>
-				<ExportedImage
+				<Image
 					alt={`Get ${appName} on Google Play`}
 					draggable={false}
 					height={60}
 					placeholder="empty"
 					src={googlePlayBadge.src}
+					unoptimized={true}
 					width={155}
 				/>
 			</a>

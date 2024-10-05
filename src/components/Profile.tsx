@@ -14,7 +14,7 @@ import {
 	faLaptopCode,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 fontAwesomeConfig.autoAddCss = false;
@@ -33,7 +33,7 @@ function Profile(): JSX.Element {
 	return (
 		<main className="profile">
 			<div>
-				<ExportedImage
+				<Image
 					className="avatar"
 					src={avatar}
 					alt="Avatar"
@@ -42,6 +42,7 @@ function Profile(): JSX.Element {
 					draggable={false}
 					placeholder="empty"
 					priority={true}
+					unoptimized={true}
 				/>
 				<h1>{t("shangzhenYang")}</h1>
 				{isChinaSite && (

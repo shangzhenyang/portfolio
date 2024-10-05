@@ -1,7 +1,7 @@
 import { isChinaSite } from "@/i18n";
 import { ListItemInfo } from "@/types";
 import classNames from "classnames";
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 
 interface ListItemProps {
 	className?: string;
@@ -30,7 +30,7 @@ function ListItem({ className, item }: ListItemProps): JSX.Element {
 				rel="noopener"
 			>
 				{item.icon ? (
-					<ExportedImage
+					<Image
 						className="icon"
 						src={item.icon}
 						alt=""

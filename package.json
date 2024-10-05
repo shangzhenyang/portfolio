@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"build": "next build && next-image-export-optimizer",
+		"build": "next build",
 		"build:cn": "NEXT_PUBLIC_LOCALE=cn npm run build",
 		"dev": "next dev",
 		"dev:cn": "NEXT_PUBLIC_LOCALE=cn next dev",
@@ -37,7 +37,6 @@
 		"eslint-config-rth": "^1.4.4",
 		"eslint-plugin-jsx-a11y": "^6.10.0",
 		"eslint-plugin-no-relative-import-paths": "^1.5.5",
-		"next-image-export-optimizer": "^1.15.1",
 		"prettier": "^3.3.3",
 		"prettier-config-rth": "^1.0.0",
 		"sharp": "^0.33.5",
