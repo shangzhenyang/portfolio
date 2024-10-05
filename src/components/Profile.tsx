@@ -37,8 +37,8 @@ function Profile(): JSX.Element {
 					className="avatar"
 					src={avatar}
 					alt="Avatar"
-					height={100}
-					width={100}
+					height={150}
+					width={150}
 					draggable={false}
 					placeholder="empty"
 					priority={true}
