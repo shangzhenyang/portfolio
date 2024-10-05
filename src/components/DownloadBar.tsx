@@ -12,14 +12,10 @@ function DownloadBar({
 	appStoreLink,
 	googlePlayLink,
 }: DownloadBarProps): JSX.Element {
-	const linkStyles =
-		"outline-none transition-transform focus:scale-105 hover:scale-105 active:scale-100";
-
 	return (
-		<div className="flex items-center px-5">
+		<div className="download-bar">
 			<a
 				aria-label={`Download ${appName} App for iOS`}
-				className={linkStyles}
 				href={appStoreLink}
 				title="Apple and the Apple Logo are registered trademarks of Apple Inc."
 			>
@@ -35,7 +31,6 @@ function DownloadBar({
 			</a>
 			<a
 				aria-label={`Download ${appName} App for Android`}
-				className={linkStyles}
 				href={googlePlayLink}
 				title="Google Play and the Google Play logo are trademarks of Google LLC."
 			>

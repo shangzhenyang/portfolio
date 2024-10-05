@@ -19,10 +19,8 @@ function ListGroup({ className, items, title }: ListGroupProps): JSX.Element {
 	});
 
 	return (
-		<fieldset className="border-solid border-y-white/10 border-b border-t p-2">
-			<legend className="border text-white leading-tight mx-auto my-0 px-4 py-1 rounded border-solid border-white/10">
-				{title}
-			</legend>
+		<fieldset>
+			<legend>{title}</legend>
 			{itemElements}
 		</fieldset>
 	);

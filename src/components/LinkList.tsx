@@ -8,7 +8,6 @@ import devmatchIcon from "@/images/devmatch.png";
 import uwClassmateIcon from "@/images/uw-classmate.png";
 import uwIcon from "@/images/uw.jpg";
 import { ListItemInfo } from "@/types";
-import classNames from "classnames";
 import { Fragment } from "react";
 
 interface Group {
@@ -18,11 +17,6 @@ interface Group {
 }
 
 function LinkList(): JSX.Element {
-	const listItemStyles =
-		"items-center cursor-default flex gap-4 leading-normal transition-colors duration-200 focus:bg-white/10 hover:bg-white/10 active:bg-white/5";
-	const titleStyles =
-		"bg-black/20 border cursor-default block leading-6 transition-colors duration-200 px-6 py-2.5 border-dotted border-transparent outline-none focus:border-white/20";
-
 	const groups: Group[] = [
 		{
 			items: [
@@ -41,18 +35,20 @@ function LinkList(): JSX.Element {
 						"TypeScript",
 						"React",
 						"Electron",
-						"Swift (iOS)",
-						"Kotlin (Android)",
+						"Swift",
+						"SwiftUI",
+						"Kotlin",
 						"Jetpack Compose",
+						"Node.js",
 						"PHP",
 						"SQL",
-						"Cybersecurity",
 						"Memcached",
 						"PWA",
 						"S3",
 						"WebSocket",
 						"RSA Encryption",
 						"Cypress",
+						"Vite",
 					],
 					title: t("airportal"),
 					when: true,
@@ -70,7 +66,6 @@ function LinkList(): JSX.Element {
 						"NoSQL",
 						"PWA",
 						"Chrome Extension",
-						"Load Balancing",
 					],
 					title: t("limeStartPage"),
 					when: true,
@@ -84,14 +79,11 @@ function LinkList(): JSX.Element {
 						"Vue",
 						"PHP",
 						"SQL",
-						"CDN",
 						"Serverless",
 						"S3",
 						"WAF",
-						"High Availability",
-						"HTML Parsing",
-						"HTTP Handling",
 						"Cypress",
+						"Vite",
 					],
 					title: t("webHosting"),
 					when: true,
@@ -114,7 +106,6 @@ function LinkList(): JSX.Element {
 						"AWS Lambda",
 						"SQL",
 						"Cypress",
-						"DevOps",
 					],
 					title: "DevMatch",
 					when: true,
@@ -137,28 +128,42 @@ function LinkList(): JSX.Element {
 				{
 					description: t("encoderDescription"),
 					link: "https://encoder.shangzhenyang.com/",
-					tags: ["TypeScript", "React", "Tailwind CSS", "PWA"],
+					tags: [
+						"TypeScript",
+						"React",
+						"Tailwind CSS",
+						"NextUI",
+						"PWA",
+						"Vite",
+					],
 					title: t("encoder"),
 					when: true,
 				},
 				{
 					description: t("randomNumberDescription"),
 					link: "https://random.shangzhenyang.com/",
-					tags: ["TypeScript", "Vue", "PWA"],
+					tags: ["TypeScript", "Vue", "PWA", "Vite"],
 					title: t("randomNumber"),
 					when: true,
 				},
 				{
 					description: t("calculatorDescription"),
 					link: "https://calc.shangzhenyang.com/",
-					tags: ["TypeScript", "React", "PWA"],
+					tags: ["TypeScript", "React", "PWA", "Vite"],
 					title: t("calculator"),
 					when: true,
 				},
 				{
 					description: t("marqueeDescription"),
 					link: "https://marquee.shangzhenyang.com/",
-					tags: ["TypeScript", "React", "Tailwind CSS", "PWA"],
+					tags: [
+						"TypeScript",
+						"React",
+						"Tailwind CSS",
+						"NextUI",
+						"PWA",
+						"Vite",
+					],
 					title: t("marquee"),
 					when: true,
 				},
@@ -237,10 +242,7 @@ function LinkList(): JSX.Element {
 		}
 		return (
 			<ListGroup
-				className={classNames(
-					listItemStyles,
-					"bg-transparent px-5 py-2.5 rounded",
-				)}
+				className="in-group"
 				key={group.title}
 				items={group.items}
 				title={group.title}
@@ -274,10 +276,6 @@ function LinkList(): JSX.Element {
 	const friendElements = friends.map((item) => {
 		return (
 			<ListItem
-				className={classNames(
-					listItemStyles,
-					"bg-black/10 px-7 py-2.5",
-				)}
 				item={item}
 				key={item.title}
 			/>
@@ -285,17 +283,13 @@ function LinkList(): JSX.Element {
 	});
 
 	return (
-		<div
-			className={
-				"flex flex-col grow-0 shrink-0 basis-[400px] gap-5 h-screen md:overflow-x-hidden md:overflow-y-auto"
-			}
-		>
+		<div className="link-list">
 			<div
 				id="works"
-				className="flex flex-col gap-5 md:w-[400px]"
+				className="groups"
 			>
 				<a
-					className={titleStyles}
+					className="title"
 					href="#works"
 					target="_self"
 				>
@@ -306,7 +300,7 @@ function LinkList(): JSX.Element {
 			{isChinaSite && (
 				<div id="friends">
 					<a
-						className={titleStyles}
+						className="title"
 						href="#friends"
 						target="_self"
 					>

@@ -20,9 +20,6 @@ import { useEffect, useState } from "react";
 fontAwesomeConfig.autoAddCss = false;
 
 function Profile(): JSX.Element {
-	const buttonStyles =
-		"items-center bg-white/10 border cursor-default flex gap-1 justify-center transition-colors duration-200 w-[300px] px-5 py-2 rounded-lg border-solid border-white/20 focus:bg-white/20 hover:bg-white/20 hover:shadow active:bg-white/15";
-
 	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinaSite);
 
 	const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
@@ -34,10 +31,10 @@ function Profile(): JSX.Element {
 	}, [timeZone]);
 
 	return (
-		<main className="items-center flex grow-0 shrink-0 basis-[calc(100%-46px)] flex-col justify-center overflow-auto md:shadow-[0_0_5px_black] md:flex-1 md:w-[calc(100%-400px)]">
-			<div className="w-full">
+		<main className="profile">
+			<div>
 				<ExportedImage
-					className="border block mx-auto my-0 rounded-full border-solid border-white/20 md:h-[150px] md:w-[150px]"
+					className="avatar"
 					src={avatar}
 					alt="Avatar"
 					height={100}
@@ -46,11 +43,9 @@ function Profile(): JSX.Element {
 					placeholder="empty"
 					priority={true}
 				/>
-				<h1 className="text-2xl my-5 mx-0 text-center">
-					{t("shangzhenYang")}
-				</h1>
+				<h1>{t("shangzhenYang")}</h1>
 				{isChinaSite && (
-					<div className="leading-7 mb-7 text-center">
+					<div className="description">
 						<div>现就读于华盛顿大学计算机系</div>
 						<div>
 							<a
@@ -65,10 +60,9 @@ function Profile(): JSX.Element {
 					</div>
 				)}
 				{!isChinaSite && (
-					<div className="leading-7 mb-7 mx-auto w-fit">
+					<div className="description has-icon">
 						<div>
 							<FontAwesomeIcon
-								className="mr-2"
 								icon={faGraduationCap}
 								fixedWidth
 							/>
@@ -76,7 +70,6 @@ function Profile(): JSX.Element {
 						</div>
 						<div>
 							<FontAwesomeIcon
-								className="mr-2"
 								icon={faLaptopCode}
 								fixedWidth
 							/>
@@ -99,9 +92,9 @@ function Profile(): JSX.Element {
 					</div>
 				)}
 			</div>
-			<div className="flex flex-col gap-2 mx-auto">
+			<div className="buttons">
 				<a
-					className={buttonStyles}
+					className="button"
 					href="https://github.com/shangzhenyang"
 				>
 					<FontAwesomeIcon
@@ -112,7 +105,7 @@ function Profile(): JSX.Element {
 				</a>
 				{!isChinaUser && (
 					<a
-						className={buttonStyles}
+						className="button"
 						href="https://www.linkedin.com/in/shangzhenyang/"
 					>
 						<FontAwesomeIcon
@@ -124,7 +117,7 @@ function Profile(): JSX.Element {
 				)}
 				{isChinaUser && (
 					<a
-						className={buttonStyles}
+						className="button"
 						href="https://space.bilibili.com/5931839"
 					>
 						<FontAwesomeIcon

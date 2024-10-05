@@ -2,7 +2,7 @@ import { isChinaSite, t } from "@/i18n";
 
 function Footer(): JSX.Element {
 	return (
-		<footer className="bg-black/30 text-sm leading-loose mt-auto pt-3.5 pb-4 px-6">
+		<footer>
 			<div>
 				&copy; {new Date().getFullYear()} {t("shangzhenYang")}
 			</div>
