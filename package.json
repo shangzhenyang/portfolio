@@ -3,11 +3,9 @@
 	"version": "1.0.0",
 	"private": true,
 	"scripts": {
-		"build": "next build",
-		"build:cn": "NEXT_PUBLIC_LOCALE=cn npm run build",
 		"dev": "next dev",
-		"dev:cn": "NEXT_PUBLIC_LOCALE=cn next dev",
-		"dist": "npm run build:cn",
+		"dev:cn": "NEXT_PUBLIC_LOCALE=zh-CN next dev",
+		"dist": "next build",
 		"format": "prettier --write .",
 		"lint": "eslint . --ext .ts,.tsx && prettier --check .",
 		"start": "npx serve out"

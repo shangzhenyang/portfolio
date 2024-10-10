@@ -1,6 +1,6 @@
 import Analytics from "@/components/Analytics";
 import "@/globals.css";
-import { isChinaSite, t } from "@/i18n";
+import i18n, { isChinese, t } from "@/i18n";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Metadata } from "next";
 import { ReactNode } from "react";
@@ -44,7 +44,7 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
 	if (process.env.NODE_ENV === "development") {
 		csp["script-src"].push("'unsafe-eval'");
 	}
-	if (isChinaSite) {
+	if (isChinese) {
 		csp["connect-src"].push(BAIDU_STAT);
 		csp["img-src"].push(BAIDU_STAT);
 		csp["script-src"].push(BAIDU_STAT);
@@ -67,7 +67,7 @@ function RootLayout({ children }: RootLayoutProps): JSX.Element {
 		.join("; ");
 
 	return (
-		<html lang={isChinaSite ? "zh-CN" : "en-US"}>
+		<html lang={i18n.language}>
 			<head>
 				<meta
 					httpEquiv="Content-Security-Policy"

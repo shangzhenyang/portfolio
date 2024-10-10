@@ -1,4 +1,4 @@
-import { isChinaSite, t } from "@/i18n";
+import { isChinese, t } from "@/i18n";
 
 function Footer(): JSX.Element {
 	return (
@@ -6,7 +6,7 @@ function Footer(): JSX.Element {
 			<div>
 				&copy; {new Date().getFullYear()} {t("shangzhenYang")}
 			</div>
-			{isChinaSite && (
+			{isChinese && (
 				<div>
 					<a
 						href="https://beian.miit.gov.cn/"

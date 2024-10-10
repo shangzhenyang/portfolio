@@ -1,6 +1,6 @@
 "use client";
 
-import { isChinaSite, t } from "@/i18n";
+import i18n, { isChinese, t } from "@/i18n";
 import avatar from "@/images/avatar-transparent.png";
 import { config as fontAwesomeConfig } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -20,12 +20,40 @@ import { useEffect, useState } from "react";
 fontAwesomeConfig.autoAddCss = false;
 
 function Profile(): JSX.Element {
-	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinaSite);
+	const [email, setEmail] = useState<string>("");
+	const [isChinaUser, setIsChinaUser] = useState<boolean>(isChinese);
 
 	const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
 
 	useEffect(() => {
-		if (!isChinaSite) {
+		const lang = ((): "en-US" | "zh-CN" => {
+			if (
+				navigator.language.startsWith("zh") ||
+				navigator.language.startsWith("yue")
+			) {
+				return "zh-CN";
+			} else {
+				return "en-US";
+			}
+		})();
+		const frontendUrl = lang.startsWith("zh")
+			? "https://www.yangshangzhen.com/"
+			: "https://www.shangzhenyang.com/";
+		if (
+			process.env.NODE_ENV === "production" &&
+			lang !== i18n.language &&
+			!/bot|spider/i.test(navigator.userAgent)
+		) {
+			window.location.href = frontendUrl;
+		}
+	}, []);
+
+	useEffect(() => {
+		setEmail(window.atob("aGVsbG9Ac2hhbmd6aGVueWFuZy5jb20="));
+	}, []);
+
+	useEffect(() => {
+		if (!isChinese) {
 			setIsChinaUser(timeZone === "Asia/Shanghai");
 		}
 	}, [timeZone]);
@@ -45,53 +73,35 @@ function Profile(): JSX.Element {
 					unoptimized={true}
 				/>
 				<h1>{t("shangzhenYang")}</h1>
-				{isChinaSite && (
-					<div className="description">
-						<div>现就读于华盛顿大学计算机系</div>
-						<div>
-							<a
-								className="transition-opacity duration-200 border-b border-solid hover:opacity-80 active:opacity-60"
-								href="https://www.retiehe.com/"
-								rel="noopener"
-							>
-								热铁盒
-							</a>
-							创始人兼软件工程师
-						</div>
+				<div className="description">
+					<div>
+						<FontAwesomeIcon
+							icon={faGraduationCap}
+							fixedWidth
+						/>
+						{t("csAtUw")}
 					</div>
-				)}
-				{!isChinaSite && (
-					<div className="description has-icon">
-						<div>
-							<FontAwesomeIcon
-								icon={faGraduationCap}
-								fixedWidth
-							/>
-							CS Student at University of Washington
-						</div>
-						<div>
-							<FontAwesomeIcon
-								icon={faLaptopCode}
-								fixedWidth
-							/>
-							Full-Stack Software Engineer
-						</div>
-						<div>
-							<FontAwesomeIcon
-								className="mr-2"
-								icon={faEnvelope}
-								fixedWidth
-							/>
-							Email:{" "}
-							<a
-								className="underline"
-								href="mailto:hello@shangzhenyang.com"
-							>
-								hello@shangzhenyang.com
-							</a>
-						</div>
+					<div>
+						<FontAwesomeIcon
+							icon={faLaptopCode}
+							fixedWidth
+						/>
+						{t("fullStackSoftwareEngineer")}
 					</div>
-				)}
+					<div>
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							fixedWidth
+						/>
+						{t("email")}
+						<a
+							className="underline"
+							href={`mailto:${email}`}
+						>
+							{email || "[email protected]"}
+						</a>
+					</div>
+				</div>
 			</div>
 			<div className="buttons">
 				<a

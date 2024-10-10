@@ -228,6 +228,8 @@ legend {
 .profile .description {
 	line-height: 1.75;
 	margin: 0 auto 28px;
+	text-align: left;
+	width: fit-content;
 }
 
 .profile .description svg {
@@ -236,11 +238,6 @@ legend {
 
 .profile .description a {
 	text-decoration: underline;
-}
-
-.profile .description.has-icon {
-	text-align: left;
-	width: fit-content;
 }
 
 .root {

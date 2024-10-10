@@ -1,11 +1,15 @@
 import translationEnUs from "@/translations/en-us.json";
 import translationZhCn from "@/translations/zh-cn.json";
 
-const isChinaSite = process.env.NEXT_PUBLIC_LOCALE === "cn";
+export const isChinese: boolean =
+	process.env.NEXT_PUBLIC_LOCALE?.startsWith("zh") || false;
+const i18n = {
+	language: isChinese ? "zh-CN" : "en-US",
+};
 
-function t(key: string): string {
+export function t(key: string): string {
 	let result: string | undefined = undefined;
-	if (isChinaSite) {
+	if (isChinese) {
 		result = translationZhCn[key as keyof typeof translationZhCn];
 	}
 	if (!result) {
@@ -14,4 +18,4 @@ function t(key: string): string {
 	return result || key;
 }
 
-export { isChinaSite, t };
+export default i18n;

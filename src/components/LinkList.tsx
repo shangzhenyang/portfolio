@@ -2,7 +2,7 @@ import DownloadBar from "@/components/DownloadBar";
 import Footer from "@/components/Footer";
 import ListGroup from "@/components/ListGroup";
 import ListItem from "@/components/ListItem";
-import { isChinaSite, t } from "@/i18n";
+import { isChinese, t } from "@/i18n";
 import aiChatIcon from "@/images/ai-chat.png";
 import devmatchIcon from "@/images/devmatch.png";
 import uwClassmateIcon from "@/images/uw-classmate.png";
@@ -22,7 +22,7 @@ function LinkList(): JSX.Element {
 			items: [
 				{
 					description: t("airportalDescription"),
-					extra: isChinaSite ? undefined : (
+					extra: isChinese ? undefined : (
 						<DownloadBar
 							appName="AirPortal"
 							appStoreLink="https://apps.apple.com/app/id1524074327"
@@ -56,7 +56,7 @@ function LinkList(): JSX.Element {
 				{
 					description: t("limeStartPageDescription"),
 					icon: "https://assets.retiehe.com/lime-apple-touch-icon.png",
-					link: isChinaSite
+					link: isChinese
 						? "https://intro.limestart.cn/"
 						: "https://intro.limestart.page/en/",
 					tags: [
@@ -91,37 +91,6 @@ function LinkList(): JSX.Element {
 			],
 			title: t("mainFullStackProjects"),
 			when: true,
-		},
-		{
-			items: [
-				{
-					description:
-						"A coding assessment platform for hiring software engineers.",
-					icon: devmatchIcon.src,
-					link: "https://www.devmatch.io/",
-					tags: [
-						"TypeScript",
-						"Angular",
-						"Node.js",
-						"AWS Lambda",
-						"SQL",
-						"Cypress",
-					],
-					title: "DevMatch",
-					when: true,
-				},
-				{
-					description:
-						"A course commenting website for students at University of Washington.",
-					icon: uwClassmateIcon.src,
-					link: "https://uwclassmate.com/",
-					tags: ["JavaScript", "React", "Node.js", "SQL"],
-					title: "Hua Classmate",
-					when: true,
-				},
-			],
-			title: "Collaborative Projects",
-			when: !isChinaSite,
 		},
 		{
 			items: [
@@ -182,6 +151,35 @@ function LinkList(): JSX.Element {
 		{
 			items: [
 				{
+					description: t("devmatchDescription"),
+					icon: devmatchIcon.src,
+					link: "https://www.devmatch.io/",
+					tags: [
+						"TypeScript",
+						"Angular",
+						"Node.js",
+						"AWS Lambda",
+						"SQL",
+						"Cypress",
+					],
+					title: "DevMatch",
+					when: true,
+				},
+				{
+					description: t("huaClassmateDescription"),
+					icon: uwClassmateIcon.src,
+					link: "https://uwclassmate.com/",
+					tags: ["JavaScript", "React", "Node.js", "SQL"],
+					title: t("huaClassmate"),
+					when: true,
+				},
+			],
+			title: t("participatedIn"),
+			when: true,
+		},
+		{
+			items: [
+				{
 					description: t("lanScanDescription"),
 					link: "https://www.npmjs.com/package/lan-scan",
 					tags: ["TypeScript", "Node.js"],
@@ -221,7 +219,7 @@ function LinkList(): JSX.Element {
 					link: "https://www.ai-chat.dev/",
 					tags: ["TypeScript", "React", "Cloudflare Workers"],
 					title: "AI Chat",
-					when: !isChinaSite,
+					when: !isChinese,
 				},
 				{
 					description: t("bingWallpaperApiDescription"),
@@ -297,7 +295,7 @@ function LinkList(): JSX.Element {
 				</a>
 				{groupElements}
 			</div>
-			{isChinaSite && (
+			{isChinese && (
 				<div id="friends">
 					<a
 						className="title"

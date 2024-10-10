@@ -1,13 +1,13 @@
 "use client";
 
-import { isChinaSite } from "@/i18n";
+import { isChinese } from "@/i18n";
 import { useEffect } from "react";
 import ReactGA from "react-ga4";
 
 function Analytics(): JSX.Element {
 	useEffect(() => {
 		setTimeout(() => {
-			if (isChinaSite) {
+			if (isChinese) {
 				const stat = document.createElement("script");
 				stat.async = true;
 				stat.src =

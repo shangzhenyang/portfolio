@@ -1,4 +1,3 @@
-import { isChinaSite } from "@/i18n";
 import { ListItemInfo } from "@/types";
 import classNames from "classnames";
 import Image from "next/image";
@@ -57,7 +56,7 @@ function ListItem({ className, item }: ListItemProps): JSX.Element {
 				</div>
 			</a>
 			{item.extra}
-			{!isChinaSite && item.tags.length > 0 && (
+			{item.tags.length > 0 && (
 				<div className="description tags">{tagElements}</div>
 			)}
 		</div>
