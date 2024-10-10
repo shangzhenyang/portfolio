@@ -30,7 +30,7 @@ function LinkList(): JSX.Element {
 						/>
 					),
 					icon: "https://assets.retiehe.com/ap-apple-touch-icon-2.png",
-					link: "https://airportal.cn/",
+					link: "https://www.airportal.cn/",
 					tags: [
 						"TypeScript",
 						"React",
