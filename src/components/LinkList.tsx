@@ -214,12 +214,12 @@ function LinkList(): JSX.Element {
 		{
 			items: [
 				{
-					description: "An unofficial ChatGPT client.",
+					description: t("aiChatDescription"),
 					icon: aiChatIcon.src,
 					link: "https://www.ai-chat.dev/",
 					tags: ["TypeScript", "React", "Cloudflare Workers"],
-					title: "AI Chat",
-					when: !isChinese,
+					title: t("aiChat"),
+					when: true,
 				},
 				{
 					description: t("bingWallpaperApiDescription"),
